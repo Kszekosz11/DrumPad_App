@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NAudio.Wave;
+using NAudio.Wave.SampleProviders;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Media;
@@ -13,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WMPLib;
 
 namespace SoundsTest
 {
@@ -21,76 +24,83 @@ namespace SoundsTest
     /// </summary>
     public partial class MainWindow : Window
     {
-        SoundPlayer drumsPlayer;
-        SoundPlayer guitarPlayer;
-        SoundPlayer hiphopPlayer;
-        SoundPlayer hipHopBasePlayer;
-        string[] drums;
-        string[] guitar;
-        string[] hiphop;
-        string[] hipHopBase;
-        string list;
+        static WindowsMediaPlayer mediaPlayer = new WindowsMediaPlayer();
+        IWMPMedia media;
+        IWMPPlaylist playlist = mediaPlayer.playlistCollection.newPlaylist("myPlayList");
+
+        SoundPlayer soundPlayer;
+
+        public static string[] drumsLocation;
+        public static string[] guitarLocation;
+        public static string[] hiphopLocation;
+        public static string[] hipHopBaseLocation;
+
+        string[] allEffects;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            drums = new string[(int)EffectsQuantity.drums];
-            guitar = new string[(int)EffectsQuantity.guitar];
-            hiphop = new string[(int)EffectsQuantity.hiphop];
-            hipHopBase = new string[26];
+            hipHopBaseLocation = new string[(int)EffectsQuantity.hipHopBeats];
+            drumsLocation = new string[(int)EffectsQuantity.drums];
+            guitarLocation = new string[(int)EffectsQuantity.guitar];
+            hiphopLocation = new string[(int)EffectsQuantity.hipHop];
 
-            drumsPlayer = new SoundPlayer();
-            guitarPlayer = new SoundPlayer();
-            hiphopPlayer = new SoundPlayer();
-            hipHopBasePlayer = new SoundPlayer();
+            SetPathEffects();
+            
+            allEffects = new List<string>()
+                .Concat(hipHopBaseLocation)
+                .Concat(drumsLocation)
+                .Concat(guitarLocation)
+                .Concat(hiphopLocation)
+                .ToArray();
 
-            for (int i = 0; i < drums.Length; i++)
-            {
-                drums[i] = "Effects/Drums/drums" + i.ToString() + ".wav";
-            }
-
-            for (int i = 0; i < guitar.Length; i++)
-            {
-                guitar[i] = "guitar" + i.ToString() + ".wav";
-            }
-
-            for (int i = 0; i < hiphop.Length; i++)
-            {
-                hiphop[i] = "hiphop" + i.ToString() + ".wav";
-            }
-
-            for (int i = 0; i < hipHopBase.Length; i++)
-            {
-                hipHopBase[i] = "Effects/BaseHipHop/hipHop (" + i.ToString() + ").wav";
-            }
+            soundPlayer = new SoundPlayer();                        
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int tag = int.Parse((sender as Control).Tag.ToString());
-            drumsPlayer.SoundLocation = "Effects/Drums/drums" + tag.ToString() + ".wav"; //= new SoundPlayer(drums[tag]);
-            drumsPlayer.Play();            
+            test.Text = tag.ToString();
+            soundPlayer.SoundLocation = allEffects[tag];
+            soundPlayer.Play();            
         }
 
-        private void Button_Click2(object sender, RoutedEventArgs e)
-        {
-            int tag = int.Parse((sender as Control).Tag.ToString());
-            guitarPlayer.SoundLocation = "guitar" + tag.ToString() + ".wav"; //= new SoundPlayer(guitar[tag]);
-            guitarPlayer.Play();
+        private void Button_PlayMusic(object sender, RoutedEventArgs e)
+        {                       
+            mediaPlayer.controls.play();
         }
 
-        private void Button_Click3(object sender, RoutedEventArgs e)
+        private void Badged_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            int tag = int.Parse((sender as Control).Tag.ToString());
-            hiphopPlayer.SoundLocation = "hiphop" + tag.ToString() + ".wav"; //= new SoundPlayer(hiphop[tag]);
-            hiphopPlayer.Play();
+            int tag = int.Parse((sender as Control).Tag.ToString());            
+
+            media = mediaPlayer.newMedia("Effects/BaseHipHop/hipHop (" + tag.ToString() + ").wav");
+            playlist.appendItem(media);
+            mediaPlayer.currentPlaylist = playlist;
         }
 
-        private void Button_Click4(object sender, RoutedEventArgs e)
+        private void SetPathEffects()
         {
-            int tag = int.Parse((sender as Control).Tag.ToString());
-            hipHopBasePlayer.SoundLocation = "Effects/BaseHipHop/hipHop (" + tag.ToString() + ").wav"; //= new SoundPlayer(hiphop[tag]);
-            hipHopBasePlayer.Play();
+            for (int i = 0; i < hipHopBaseLocation.Length; i++)
+            {
+                hipHopBaseLocation[i] = "Effects/BaseHipHop/hipHop (" + i.ToString() + ").wav";
+            }
+
+            for (int i = 0; i < drumsLocation.Length; i++)
+            {
+                drumsLocation[i] = "Effects/Drums/drums (" + i.ToString() + ").wav";
+            }
+
+            for (int i = 0; i < guitarLocation.Length; i++)
+            {
+                guitarLocation[i] = "Effects/Guitar/guitar (" + i.ToString() + ").wav";
+            }
+
+            for (int i = 0; i < hiphopLocation.Length; i++)
+            {
+                hiphopLocation[i] = "Effects/HipHop/hipHop (" + i.ToString() + ").wav";
+            }
         }
     }
 }

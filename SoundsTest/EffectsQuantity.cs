@@ -8,8 +8,9 @@ namespace SoundsTest
 {
     enum EffectsQuantity
     {
-        drums = 5,
-        guitar = 5,
-        hiphop = 8
+        drums = 10,
+        guitar = 10,
+        hipHop = 10,
+        hipHopBeats = 10
     }
 }

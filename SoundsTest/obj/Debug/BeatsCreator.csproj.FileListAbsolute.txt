@@ -22,3 +22,27 @@ D:\C#\BeatsCreator\SoundsTest\obj\Debug\SoundsTest.pdb
 D:\C#\BeatsCreator\SoundsTest\obj\Debug\BeatsCreator.csprojAssemblyReference.cache
 D:\C#\BeatsCreator\SoundsTest\bin\Debug\AudioVUMeterWPFControl.dll
 D:\C#\BeatsCreator\SoundsTest\obj\Debug\SoundsTest_Content.g.cs
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\bin\Debug\SoundsTest.exe.config
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\bin\Debug\SoundsTest.exe
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\bin\Debug\SoundsTest.pdb
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\bin\Debug\MaterialDesignColors.dll
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\bin\Debug\MaterialDesignColors.pdb
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\obj\Debug\BeatsCreator.csprojAssemblyReference.cache
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\obj\Debug\MainWindow.g.cs
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\obj\Debug\App.g.cs
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\obj\Debug\SoundsTest_MarkupCompile.cache
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\obj\Debug\SoundsTest_MarkupCompile.lref
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\obj\Debug\App.baml
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\obj\Debug\MainWindow.baml
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\obj\Debug\SoundsTest.g.resources
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\obj\Debug\SoundsTest.Properties.Resources.resources
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\obj\Debug\BeatsCreator.csproj.GenerateResource.cache
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\obj\Debug\BeatsCreator.csproj.CopyComplete
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\obj\Debug\SoundsTest.exe
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\obj\Debug\SoundsTest.pdb
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\bin\Debug\NAudio.dll
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\bin\Debug\NAudio.xml
+E:\Semestr IV\Programowanie IV\beatsCreator\SoundsTest\bin\Debug\AxInterop.WMPLib.dll
