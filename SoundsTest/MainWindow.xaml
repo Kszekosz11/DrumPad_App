@@ -28,6 +28,8 @@
             </ControlTemplate.Triggers>
 
         </ControlTemplate>
+        
+        
     </Window.Resources>
     
     <Grid>
@@ -43,10 +45,10 @@
         
         <StackPanel Grid.Row="1">
             <WrapPanel>
-                <TabControl>
-                    <TabItem Header="Base" Template="{StaticResource TabItemTemplate}" Tag="0">
-                        <WrapPanel>
-                            <materialDesign:Badged Badge="+" MouseDoubleClick="Badged_MouseDoubleClick" Tag="0">
+                <TabControl x:Name="TabControlSamples" SelectionChanged="TabControl_SelectionChanged">
+                    <TabItem Header="Base" Template="{StaticResource TabItemTemplate}">
+                        <local:ButtonLayout Height="100"/>
+                            <!--<materialDesign:Badged Badge="+" MouseDoubleClick="Badged_MouseDoubleClick" Tag="0">
                                 <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="HipHop1" Click="Button_Click" Tag="0"
                                     materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
                                     materialDesign:ButtonProgressAssist.Value="-1"
@@ -74,7 +76,7 @@
                             <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop7" Click="Button_Click" Tag="6"/>
                             <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click" Tag="7"/>
                             <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click" Tag="8"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click" Tag="9"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click" Tag="9"/>-->
                             <!--<Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click4" Tag="10"/>
                             <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click4" Tag="11"/>
                             <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click4" Tag="12"/>
@@ -90,53 +92,59 @@
                             <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click4" Tag="22"/>
                             <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click4" Tag="23"/>
                             <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click4" Tag="24"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click4" Tag="25"/>-->
-                        </WrapPanel>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click4" Tag="25"/>-->                        
                     </TabItem>
                     <TabItem Header="Drums" Template="{StaticResource TabItemTemplate}" Tag="1">
-                        <WrapPanel>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums1" Click="Button_Click" Tag="10"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums2" Click="Button_Click" Tag="11"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums3" Click="Button_Click" Tag="12"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums4" Click="Button_Click" Tag="13"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums5" Click="Button_Click" Tag="14"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums5" Click="Button_Click" Tag="15"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums5" Click="Button_Click" Tag="16"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums5" Click="Button_Click" Tag="17"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums5" Click="Button_Click" Tag="18"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums5" Click="Button_Click" Tag="19"/>
-                        </WrapPanel>
+                        <local:ButtonLayout Height="100"/>
+                        <!--<WrapPanel>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums1" Click="ButtonSample_Click" Tag="10"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums2" Click="ButtonSample_Click" Tag="11"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums3" Click="ButtonSample_Click" Tag="12"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums4" Click="ButtonSample_Click" Tag="13"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums5" Click="ButtonSample_Click" Tag="14"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums5" Click="ButtonSample_Click" Tag="15"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums5" Click="ButtonSample_Click" Tag="16"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums5" Click="ButtonSample_Click" Tag="17"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums5" Click="ButtonSample_Click" Tag="18"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Drums5" Click="ButtonSample_Click" Tag="19"/>
+                        </WrapPanel>-->
                     </TabItem>
                     <TabItem Header="Guitar" Template="{StaticResource TabItemTemplate}" Tag="2">
-                        <WrapPanel>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar1" Click="Button_Click" Tag="20"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar2" Click="Button_Click" Tag="21"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar3" Click="Button_Click" Tag="22"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar4" Click="Button_Click" Tag="23"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar5" Click="Button_Click" Tag="24"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar6" Click="Button_Click" Tag="25"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar7" Click="Button_Click" Tag="26"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar8" Click="Button_Click" Tag="27"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar9" Click="Button_Click" Tag="28"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar10" Click="Button_Click" Tag="29"/>
-                        </WrapPanel>
+                        <local:ButtonLayout Height="100"/>
+                        <!--<WrapPanel>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar1" Click="ButtonSample_Click" Tag="20"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar2" Click="ButtonSample_Click" Tag="21"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar3" Click="ButtonSample_Click" Tag="22"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar4" Click="ButtonSample_Click" Tag="23"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar5" Click="ButtonSample_Click" Tag="24"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar6" Click="ButtonSample_Click" Tag="25"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar7" Click="ButtonSample_Click" Tag="26"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar8" Click="ButtonSample_Click" Tag="27"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar9" Click="ButtonSample_Click" Tag="28"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="Guitar10" Click="ButtonSample_Click" Tag="29"/>
+                        </WrapPanel>-->
                     </TabItem>
                     <TabItem Header="HipHop" Template="{StaticResource TabItemTemplate}" Tag="3">
-                        <WrapPanel>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop1" Click="Button_Click" Tag="30"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop2" Click="Button_Click" Tag="31"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop3" Click="Button_Click" Tag="32"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop4" Click="Button_Click" Tag="33"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop5" Click="Button_Click" Tag="34"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop6" Click="Button_Click" Tag="35"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop7" Click="Button_Click" Tag="36"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click" Tag="37"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click" Tag="38"/>
-                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="Button_Click" Tag="39"/>
-                        </WrapPanel>
+                        <local:ButtonLayout Height="100"/>
+                        <!--<WrapPanel>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop1" Click="ButtonSample_Click" Tag="30"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop2" Click="ButtonSample_Click" Tag="31"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop3" Click="ButtonSample_Click" Tag="32"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop4" Click="ButtonSample_Click" Tag="33"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop5" Click="ButtonSample_Click" Tag="34"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop6" Click="ButtonSample_Click" Tag="35"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop7" Click="ButtonSample_Click" Tag="36"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="ButtonSample_Click" Tag="37"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="ButtonSample_Click" Tag="38"/>
+                            <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Margin="10 0 0 0" Content="HipHop8" Click="ButtonSample_Click" Tag="39"/>
+                        </WrapPanel>-->
                     </TabItem>
-                    <TabItem Header="Reggae" Template="{StaticResource TabItemTemplate}"/>
-                    <TabItem Header="Trap" Template="{StaticResource TabItemTemplate}"/>
+                    <TabItem Header="Reggae" Template="{StaticResource TabItemTemplate}">
+                        <local:ButtonLayout Height="100"/>
+                    </TabItem>
+                    <TabItem Header="Trap" Template="{StaticResource TabItemTemplate}">
+                        <local:ButtonLayout Height="100"/>
+                    </TabItem>
                 </TabControl>
             </WrapPanel>
             <WrapPanel Grid.Row="2">

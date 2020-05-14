@@ -2,10 +2,12 @@
 using NAudio.Wave.SampleProviders;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -28,79 +30,79 @@ namespace SoundsTest
         IWMPMedia media;
         IWMPPlaylist playlist = mediaPlayer.playlistCollection.newPlaylist("myPlayList");
 
-        SoundPlayer soundPlayer;
+        //SoundPlayer soundPlayer;
+        PathFiles pathFiles;
 
-        public static string[] drumsLocation;
-        public static string[] guitarLocation;
-        public static string[] hiphopLocation;
-        public static string[] hipHopBaseLocation;
-
-        string[] allEffects;
+        public int index;
 
         public MainWindow()
         {
             InitializeComponent();
-
-            hipHopBaseLocation = new string[(int)EffectsQuantity.hipHopBeats];
-            drumsLocation = new string[(int)EffectsQuantity.drums];
-            guitarLocation = new string[(int)EffectsQuantity.guitar];
-            hiphopLocation = new string[(int)EffectsQuantity.hipHop];
-
-            SetPathEffects();
-            
-            allEffects = new List<string>()
-                .Concat(hipHopBaseLocation)
-                .Concat(drumsLocation)
-                .Concat(guitarLocation)
-                .Concat(hiphopLocation)
-                .ToArray();
-
-            soundPlayer = new SoundPlayer();                        
+            pathFiles = new PathFiles();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int tag = int.Parse((sender as Control).Tag.ToString());
-            test.Text = tag.ToString();
-            soundPlayer.SoundLocation = allEffects[tag];
-            soundPlayer.Play();            
+            index = TabControlSamples.SelectedIndex;
+
+            switch (index)
+            {
+                case 0:
+                    this.DataContext = new ViewModel
+                    {
+                        SampleName = new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }
+                    };
+                    break;
+                case 1:
+                    this.DataContext = new ViewModel
+                    {
+                        SampleName = new string[] { "10", "11", "12", "13", "14", "15", "16", "17", "18", "19" }
+                    };
+                    break;
+                case 2:
+                    this.DataContext = new ViewModel
+                    {
+                        SampleName = new string[] { "20", "21", "22", "23", "24", "25", "26", "27", "28", "29" }
+                    };
+                    break;
+                case 3:
+                    this.DataContext = new ViewModel
+                    {
+                        SampleName = new string[] { "30", "31", "32", "33", "34", "35", "36", "37", "38", "39" }
+                    };
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        class ViewModel
+        {
+            public string[] SampleName { get; set; }
+            public string[] Path { get; set; }
+            public int Index { get; set; }
+        }        
+
+        public void ButtonSample_Click(object sender, RoutedEventArgs e)
+        {
+            //int tag = int.Parse((sender as Control).Tag.ToString());
+            //test.Text = tag.ToString();
+            //soundPlayer.SoundLocation = pathFiles.allEffects[tag];
+            //soundPlayer.Play();
         }
 
         private void Button_PlayMusic(object sender, RoutedEventArgs e)
-        {                       
+        {
             mediaPlayer.controls.play();
         }
 
         private void Badged_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            int tag = int.Parse((sender as Control).Tag.ToString());            
+            int tag = int.Parse((sender as Control).Tag.ToString());
 
             media = mediaPlayer.newMedia("Effects/BaseHipHop/hipHop (" + tag.ToString() + ").wav");
             playlist.appendItem(media);
             mediaPlayer.currentPlaylist = playlist;
-        }
-
-        private void SetPathEffects()
-        {
-            for (int i = 0; i < hipHopBaseLocation.Length; i++)
-            {
-                hipHopBaseLocation[i] = "Effects/BaseHipHop/hipHop (" + i.ToString() + ").wav";
-            }
-
-            for (int i = 0; i < drumsLocation.Length; i++)
-            {
-                drumsLocation[i] = "Effects/Drums/drums (" + i.ToString() + ").wav";
-            }
-
-            for (int i = 0; i < guitarLocation.Length; i++)
-            {
-                guitarLocation[i] = "Effects/Guitar/guitar (" + i.ToString() + ").wav";
-            }
-
-            for (int i = 0; i < hiphopLocation.Length; i++)
-            {
-                hiphopLocation[i] = "Effects/HipHop/hipHop (" + i.ToString() + ").wav";
-            }
         }
     }
 }
