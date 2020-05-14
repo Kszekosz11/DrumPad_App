@@ -25,13 +25,9 @@ namespace SoundsTest
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        static WindowsMediaPlayer mediaPlayer = new WindowsMediaPlayer();
-        IWMPMedia media;
-        IWMPPlaylist playlist = mediaPlayer.playlistCollection.newPlaylist("myPlayList");
-
-        //SoundPlayer soundPlayer;
+    {        
         PathFiles pathFiles;
+        Tags tags;
 
         public int index;
 
@@ -39,6 +35,7 @@ namespace SoundsTest
         {
             InitializeComponent();
             pathFiles = new PathFiles();
+            tags = new Tags();
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -48,61 +45,73 @@ namespace SoundsTest
             switch (index)
             {
                 case 0:
-                    this.DataContext = new ViewModel
+                    this.DataContext = new WindowViewModel
                     {
-                        SampleName = new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" }
+                        Samples = new SamplesModel[]
+                        {
+                            new SamplesModel
+                            {
+                                SampleName = pathFiles.hipHopBaseSamplesNames,
+                                Tags = tags.hipHopBaseTags
+                            }
+                        }
                     };
                     break;
                 case 1:
-                    this.DataContext = new ViewModel
+                    this.DataContext = new WindowViewModel
                     {
-                        SampleName = new string[] { "10", "11", "12", "13", "14", "15", "16", "17", "18", "19" }
+                        Samples = new SamplesModel[]
+                        {
+                            new SamplesModel
+                            {
+                                SampleName = pathFiles.drumsSamplesNames,
+                                Tags = tags.drumsTags
+                            }
+                        }
                     };
                     break;
                 case 2:
-                    this.DataContext = new ViewModel
+                    this.DataContext = new WindowViewModel
                     {
-                        SampleName = new string[] { "20", "21", "22", "23", "24", "25", "26", "27", "28", "29" }
+                        Samples = new SamplesModel[]
+                    {
+                            new SamplesModel
+                            {
+                                SampleName = pathFiles.guitarSamplesNames,
+                                Tags = tags.guitarTags
+                            }
+                    }
                     };
                     break;
                 case 3:
-                    this.DataContext = new ViewModel
+                    this.DataContext = new WindowViewModel
                     {
-                        SampleName = new string[] { "30", "31", "32", "33", "34", "35", "36", "37", "38", "39" }
+                        Samples = new SamplesModel[]
+                        {
+                            new SamplesModel
+                            {
+                                SampleName = pathFiles.hiphopSamplesNames,
+                                Tags = tags.hipHopTags
+                            }
+                        }
+                    };
+                    break;
+                case 4:
+                    this.DataContext = new WindowViewModel
+                    {
+                        Samples = new SamplesModel[]
+                            {
+                            new SamplesModel
+                            {
+                                SampleName = pathFiles.hiphopSamplesNames,
+                                Tags = tags.hipHopTags
+                            }
+                            }
                     };
                     break;
                 default:
                     break;
             }
-        }
-
-        class ViewModel
-        {
-            public string[] SampleName { get; set; }
-            public string[] Path { get; set; }
-            public int Index { get; set; }
-        }        
-
-        public void ButtonSample_Click(object sender, RoutedEventArgs e)
-        {
-            //int tag = int.Parse((sender as Control).Tag.ToString());
-            //test.Text = tag.ToString();
-            //soundPlayer.SoundLocation = pathFiles.allEffects[tag];
-            //soundPlayer.Play();
-        }
-
-        private void Button_PlayMusic(object sender, RoutedEventArgs e)
-        {
-            mediaPlayer.controls.play();
-        }
-
-        private void Badged_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            int tag = int.Parse((sender as Control).Tag.ToString());
-
-            media = mediaPlayer.newMedia("Effects/BaseHipHop/hipHop (" + tag.ToString() + ").wav");
-            playlist.appendItem(media);
-            mediaPlayer.currentPlaylist = playlist;
         }
     }
 }
