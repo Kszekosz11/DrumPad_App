@@ -14,77 +14,58 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="700" Width="800">
-    <Window.Resources>
-        <ControlTemplate TargetType="{x:Type TabItem}" x:Key="TabItemTemplate">
-            <Border x:Name="contentPresenterBorder" BorderBrush="DarkGreen" BorderThickness="1,1,1,0" Padding="10" Margin="0" CornerRadius="5,5,0,0">
-                <ContentPresenter ContentSource="Header"/>
-            </Border>
-
-            <ControlTemplate.Triggers>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Border.BorderThickness" Value="3,3,3,0" TargetName="contentPresenterBorder"/>
-                    <Setter Property="Border.BorderBrush" Value="Green" TargetName="contentPresenterBorder"/>
-                </Trigger>
-            </ControlTemplate.Triggers>
-
-        </ControlTemplate>
-    </Window.Resources>
-
+        Title="MainWindow" Height="600" Width="400" MinHeight="600" MinWidth="400">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <ListView x:Name="view">
+        <GroupBox>
+            <GroupBox.Header>
+                <TextBlock Text="Drums" FontSize="12" Height="12" TextAlignment="Center"/>
+            </GroupBox.Header>
+            <samples:UserControlSamples DataContext="{Binding DrumsSamples}" Background="AliceBlue"/>
+        </GroupBox>
 
-        </ListView>
+        <GroupBox Grid.Column="1">
+            <GroupBox.Header>
+                <TextBlock Text="Guitar" FontSize="12" Height="12" TextAlignment="Center"/>
+            </GroupBox.Header>
+            <samples:UserControlSamples Tag="1" Background="AntiqueWhite" DataContext="{Binding GuitarSamples}"/>
+        </GroupBox>
 
-        <StackPanel Grid.Row="1">
-            <Border BorderBrush="Black" BorderThickness="2">
-                <TextBlock Text="INSTRUMENTAL EFFECTS" Padding="3"/>
-            </Border>
-            <WrapPanel>
-                <TabControl x:Name="TabControlSamples" SelectionChanged="TabControl_SelectionChanged">
-                    <TabItem Header="Base" Template="{StaticResource TabItemTemplate}">
-                        <samples:UserControlSamples/>
-                    </TabItem>
-                    <TabItem Header="Drums" Template="{StaticResource TabItemTemplate}">
-                        <samples:UserControlSamples/>
-                    </TabItem>
-                    <TabItem Header="Guitar" Template="{StaticResource TabItemTemplate}">
-                        <samples:UserControlSamples/>
-                    </TabItem>
-                    <TabItem Header="HipHop" Template="{StaticResource TabItemTemplate}">
-                        <samples:UserControlSamples/>
-                    </TabItem>
-                    <TabItem Header="Reggae" Template="{StaticResource TabItemTemplate}">
-                        <samples:UserControlSamples/>
-                    </TabItem>
-                    <TabItem Header="Trap" Template="{StaticResource TabItemTemplate}">
-                        <samples:UserControlSamples/>
-                    </TabItem>
-                    <TabItem Header="Trap" Template="{StaticResource TabItemTemplate}">
-                        <samples:UserControlSamples/>
-                    </TabItem>
-                    <TabItem Header="Trap" Template="{StaticResource TabItemTemplate}">
-                        <samples:UserControlSamples/>
-                    </TabItem>
-                    <TabItem Header="Trap" Template="{StaticResource TabItemTemplate}">
-                        <samples:UserControlSamples/>
-                    </TabItem>
-                    <TabItem Header="Trap" Template="{StaticResource TabItemTemplate}">
-                        <samples:UserControlSamples/>
-                    </TabItem>
-                    <TabItem Header="Trap" Template="{StaticResource TabItemTemplate}">
-                        <samples:UserControlSamples/>
-                    </TabItem>
-                    <TabItem Header="Trap" Template="{StaticResource TabItemTemplate}">
-                        <samples:UserControlSamples/>
-                    </TabItem>
-                </TabControl>
-            </WrapPanel>
-        </StackPanel>
+        <GroupBox Grid.Column="0" Grid.Row="1">
+            <GroupBox.Header>
+                <TextBlock Text="Flutes" FontSize="12" Height="12" TextAlignment="Center"/>
+            </GroupBox.Header>
+            <samples:UserControlSamples Tag="2" Background="Aqua" DataContext="{Binding FlutesSamples}"/>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1" Grid.Row="1">
+            <GroupBox.Header>
+                <TextBlock Text="Piano" FontSize="12" Height="12" TextAlignment="Center"/>
+            </GroupBox.Header>
+            <samples:UserControlSamples Tag="3" Background="Aquamarine" DataContext="{Binding PianoSamples}"/>
+        </GroupBox>
+
+        <GroupBox Grid.Column="0" Grid.Row="2">
+            <GroupBox.Header>
+                <TextBlock Text="Vox" FontSize="12" Height="12" TextAlignment="Center"/>
+            </GroupBox.Header>
+            <samples:UserControlSamples Tag="4" Background="Azure" DataContext="{Binding VoxSamples}"/>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1" Grid.Row="2">
+            <GroupBox.Header>
+                <TextBlock Text="FX" FontSize="12" Height="12" TextAlignment="Center"/>
+            </GroupBox.Header>
+            <samples:UserControlSamples Tag="5" Background="Beige" DataContext="{Binding FXSamples}"/>
+        </GroupBox>
     </Grid>
 </Window>

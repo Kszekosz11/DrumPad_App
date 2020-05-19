@@ -3,9 +3,11 @@ using NAudio.Wave.SampleProviders;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Configuration;
 using System.Linq;
 using System.Media;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
@@ -25,93 +27,67 @@ namespace SoundsTest
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {        
+    {
         PathFiles pathFiles;
         Tags tags;
 
         public int index;
+
+        SoundPlayer soundPlayer;
 
         public MainWindow()
         {
             InitializeComponent();
             pathFiles = new PathFiles();
             tags = new Tags();
-        }
 
-        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {            
-            index = TabControlSamples.SelectedIndex;
+            soundPlayer = new SoundPlayer();
 
-            switch (index)
+            DataContext = new WindowViewModel
             {
-                case 0:
-                    this.DataContext = new WindowViewModel
+                DrumsSamples = new SamplesModel[]
+                {
+                    new SamplesModel
                     {
-                        Samples = new SamplesModel[]
-                        {
-                            new SamplesModel
-                            {
-                                SampleName = pathFiles.hipHopBaseSamplesNames,
-                                Tags = tags.hipHopBaseTags
-                            }
-                        }
-                    };
-                    break;
-                case 1:
-                    this.DataContext = new WindowViewModel
-                    {
-                        Samples = new SamplesModel[]
-                        {
-                            new SamplesModel
-                            {
-                                SampleName = pathFiles.drumsSamplesNames,
-                                Tags = tags.drumsTags
-                            }
-                        }
-                    };
-                    break;
-                case 2:
-                    this.DataContext = new WindowViewModel
-                    {
-                        Samples = new SamplesModel[]
-                    {
-                            new SamplesModel
-                            {
-                                SampleName = pathFiles.guitarSamplesNames,
-                                Tags = tags.guitarTags
-                            }
+                        SampleName = new string[] {"dr1", "dr2", "dr3", "dr4"}
                     }
-                    };
-                    break;
-                case 3:
-                    this.DataContext = new WindowViewModel
+                },
+                GuitarSamples = new SamplesModel[]
+                {
+                    new SamplesModel
                     {
-                        Samples = new SamplesModel[]
-                        {
-                            new SamplesModel
-                            {
-                                SampleName = pathFiles.hiphopSamplesNames,
-                                Tags = tags.hipHopTags
-                            }
-                        }
-                    };
-                    break;
-                case 4:
-                    this.DataContext = new WindowViewModel
+                        SampleName = new string[] { "gt1", "gt2", "gt3", "gt4" }
+                    }
+                },
+                FlutesSamples = new SamplesModel[]
+                {
+                    new SamplesModel
                     {
-                        Samples = new SamplesModel[]
-                            {
-                            new SamplesModel
-                            {
-                                SampleName = pathFiles.hiphopSamplesNames,
-                                Tags = tags.hipHopTags
-                            }
-                            }
-                    };
-                    break;
-                default:
-                    break;
-            }
+                        SampleName = new string[] {"fl1", "fl2", "fl3", "fl4"}
+                    }
+                },
+                PianoSamples = new SamplesModel[]
+                {
+                    new SamplesModel
+                    {
+                        SampleName = new string[] {"pn1", "pn2", "pn3", "pn4"}
+                    }
+                },
+                VoxSamples = new SamplesModel[]
+                {
+                    new SamplesModel
+                    {
+                        SampleName = new string[] {"vx1", "vx2", "vx3", "vx4"}
+                    }
+                },
+                FXSamples = new SamplesModel[]
+                {
+                    new SamplesModel
+                    {
+                        SampleName = new string[] {"fx1", "fx2", "fx3", "fx4"}
+                    }
+                }
+            };
         }
     }
 }

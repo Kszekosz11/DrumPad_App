@@ -6,37 +6,20 @@
              xmlns:local="clr-namespace:SoundsTest"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="400">
-    <StackPanel Background="DarkGray">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-   
-            <Button Margin="5 10" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding Samples[0].SampleName[0]}" Click="ButtonAddSampleToMedia_Click" Tag="{Binding Samples[0].Tags[0]}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
-            <Button Grid.Column="1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding Samples[0].SampleName[1]}" Click="ButtonAddSampleToMedia_Click" Tag="{Binding Samples[0].Tags[1]}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
-            <Button Grid.Column="2" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding Samples[0].SampleName[2]}" Click="ButtonAddSampleToMedia_Click" Tag="{Binding Samples[0].Tags[2]}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
-            <Button Grid.Column="3" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding Samples[0].SampleName[3]}" Click="ButtonAddSampleToMedia_Click" Tag="{Binding Samples[0].Tags[3]}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
-            <Button Grid.Column="4" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding Samples[0].SampleName[4]}" Click="ButtonAddSampleToMedia_Click" Tag="{Binding Samples[0].Tags[4]}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
-            <Button Grid.Column="0" Grid.Row="1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding Samples[0].SampleName[5]}" Click="ButtonAddSampleToMedia_Click" Tag="{Binding Samples[0].Tags[5]}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
-            <Button Grid.Column="1" Grid.Row="1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding Samples[0].SampleName[6]}" Click="ButtonAddSampleToMedia_Click" Tag="{Binding Samples[0].Tags[6]}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
-            <Button Grid.Column="2" Grid.Row="1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding Samples[0].SampleName[7]}" Click="ButtonAddSampleToMedia_Click" Tag="{Binding Samples[0].Tags[7]}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
-            <Button Grid.Column="3" Grid.Row="1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding Samples[0].SampleName[8]}" Click="ButtonAddSampleToMedia_Click" Tag="{Binding Samples[0].Tags[8]}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
-            <Button Grid.Column="4" Grid.Row="1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding Samples[0].SampleName[9]}" Click="ButtonAddSampleToMedia_Click" Tag="{Binding Samples[0].Tags[9]}" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
-        </Grid>
-        <WrapPanel Margin="5 5 5 0" VerticalAlignment="Bottom">
-            <Button Content="Play" Margin="5 5 5 0" Width="80" Click="ButtonPlayMediaPlayer_Click"/>
-            <Button Content="Pause" Margin="5 5 5 0" Width="80" Click="ButtonPauseMediaPlayer_Click"/>
-            <Button Content="Resume" Margin="5 5 5 0" Width="80" Click="ButtonResumeMediaPlayer_Click"/>
-            <Button Content="Clear" Margin="5 5 5 0" Width="80" Click="ButtonClearMediaPlayer_Click"/>
-        </WrapPanel>
-    </StackPanel>
+             d:DesignHeight="150" d:DesignWidth="150" BorderThickness="0">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding SampleName[0]}" Checked="RadioButton_Checked" Tag="0"/>
+        <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding SampleName[1]}" Checked="RadioButton_Checked" Tag="1" Grid.Column="1"/>
+        <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding SampleName[2]}" Checked="RadioButton_Checked" Tag="2" Grid.Column="0" Grid.Row="1"/>
+        <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Content="{Binding SampleName[3]}" Checked="RadioButton_Checked" Tag="3" Grid.Column="1" Grid.Row="1"/>
+    </Grid>
 </UserControl>
