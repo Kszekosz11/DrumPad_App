@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:SoundsTest"        
         mc:Ignorable="d"
         xmlns:samples="clr-namespace:SoundsTest"        
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:WPFSoundVisualizationLib1="clr-namespace:WPFSoundVisualizationLib;assembly=WPFSoundVisualizationLib"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:WPFSoundVisualizationLib1="clr-namespace:WPFSoundVisualizationLib;assembly=WPFSoundVisualizationLib"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -14,11 +15,13 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="600" Width="400" MinHeight="600" MinWidth="400">
+        Title="MainWindow" Height="500" Width="400" MinHeight="500" MinWidth="400">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -26,46 +29,49 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <GroupBox>
-            <GroupBox.Header>
-                <TextBlock Text="Drums" FontSize="12" Height="12" TextAlignment="Center"/>
-            </GroupBox.Header>
-            <samples:UserControlSamples DataContext="{Binding DrumsSamples}" Background="AliceBlue"/>
-        </GroupBox>
+        <Label Content="Drums" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Label.LayoutTransform>
+                <RotateTransform Angle="270"/>
+            </Label.LayoutTransform>
+        </Label>
 
-        <GroupBox Grid.Column="1">
-            <GroupBox.Header>
-                <TextBlock Text="Guitar" FontSize="12" Height="12" TextAlignment="Center"/>
-            </GroupBox.Header>
-            <samples:UserControlSamples Tag="1" Background="AntiqueWhite" DataContext="{Binding GuitarSamples}"/>
-        </GroupBox>
+        <samples:UserControlSamples x:Name="UserControlSamples" DataContext="{Binding DrumsSamples}" Grid.Column="1" Tag="0"/>
+        <samples:UserControlSamples DataContext="{Binding GuitarSamples}" Grid.Column="2" Tag="1"/>
 
-        <GroupBox Grid.Column="0" Grid.Row="1">
-            <GroupBox.Header>
-                <TextBlock Text="Flutes" FontSize="12" Height="12" TextAlignment="Center"/>
-            </GroupBox.Header>
-            <samples:UserControlSamples Tag="2" Background="Aqua" DataContext="{Binding FlutesSamples}"/>
-        </GroupBox>
+        <Label Content="Guitar" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="3">
+            <Label.LayoutTransform>
+                <RotateTransform Angle="90"/>
+            </Label.LayoutTransform>
+        </Label>
 
-        <GroupBox Grid.Column="1" Grid.Row="1">
-            <GroupBox.Header>
-                <TextBlock Text="Piano" FontSize="12" Height="12" TextAlignment="Center"/>
-            </GroupBox.Header>
-            <samples:UserControlSamples Tag="3" Background="Aquamarine" DataContext="{Binding PianoSamples}"/>
-        </GroupBox>
+        <Label Content="Flutes" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="1">
+            <Label.LayoutTransform>
+                <RotateTransform Angle="270"/>
+            </Label.LayoutTransform>
+        </Label>
 
-        <GroupBox Grid.Column="0" Grid.Row="2">
-            <GroupBox.Header>
-                <TextBlock Text="Vox" FontSize="12" Height="12" TextAlignment="Center"/>
-            </GroupBox.Header>
-            <samples:UserControlSamples Tag="4" Background="Azure" DataContext="{Binding VoxSamples}"/>
-        </GroupBox>
+        <samples:UserControlSamples DataContext="{Binding FlutesSamples}" Grid.Column="1" Grid.Row="1"/>
+        <samples:UserControlSamples DataContext="{Binding PianoSamples}" Grid.Column="2" Grid.Row="1"/>
 
-        <GroupBox Grid.Column="1" Grid.Row="2">
-            <GroupBox.Header>
-                <TextBlock Text="FX" FontSize="12" Height="12" TextAlignment="Center"/>
-            </GroupBox.Header>
-            <samples:UserControlSamples Tag="5" Background="Beige" DataContext="{Binding FXSamples}"/>
-        </GroupBox>
+        <Label Content="Piano" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="1">
+            <Label.LayoutTransform>
+                <RotateTransform Angle="90"/>
+            </Label.LayoutTransform>
+        </Label>
+
+        <Label Content="Vox" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="2">
+            <Label.LayoutTransform>
+                <RotateTransform Angle="270"/>
+            </Label.LayoutTransform>
+        </Label>
+
+        <samples:UserControlSamples DataContext="{Binding VoxSamples}" Grid.Column="1" Grid.Row="2"/>
+        <samples:UserControlSamples DataContext="{Binding FXSamples}" Grid.Column="2" Grid.Row="2"/>
+
+        <Label Content="FX" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="2">
+            <Label.LayoutTransform>
+                <RotateTransform Angle="90"/>
+            </Label.LayoutTransform>
+        </Label>
     </Grid>
 </Window>

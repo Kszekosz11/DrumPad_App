@@ -31,17 +31,13 @@ namespace SoundsTest
         PathFiles pathFiles;
         Tags tags;
 
-        public int index;
-
-        SoundPlayer soundPlayer;
+        public int index;       
 
         public MainWindow()
         {
             InitializeComponent();
             pathFiles = new PathFiles();
-            tags = new Tags();
-
-            soundPlayer = new SoundPlayer();
+            tags = new Tags();            
 
             DataContext = new WindowViewModel
             {
@@ -49,14 +45,14 @@ namespace SoundsTest
                 {
                     new SamplesModel
                     {
-                        SampleName = new string[] {"dr1", "dr2", "dr3", "dr4"}
+                        SampleName = pathFiles.drumsSamplesNames
                     }
                 },
                 GuitarSamples = new SamplesModel[]
                 {
                     new SamplesModel
                     {
-                        SampleName = new string[] { "gt1", "gt2", "gt3", "gt4" }
+                        SampleName = pathFiles.guitarSamplesNames
                     }
                 },
                 FlutesSamples = new SamplesModel[]
