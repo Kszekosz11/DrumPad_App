@@ -48,9 +48,9 @@ D:\C#\BeatsCreator\SoundsTest\bin\Debug\AxInterop.WMPLib.dll
 D:\C#\BeatsCreator\SoundsTest\bin\Debug\NAudio.dll
 D:\C#\BeatsCreator\SoundsTest\bin\Debug\NAudio.xml
 D:\C#\BeatsCreator\SoundsTest\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\C#\BeatsCreator\SoundsTest\obj\Debug\UserControlSamples.g.cs
-D:\C#\BeatsCreator\SoundsTest\obj\Debug\UserControlSamples.baml
 D:\C#\BeatsCreator\SoundsTest\bin\Debug\license.txt
 D:\C#\BeatsCreator\SoundsTest\bin\Debug\WPFSoundVisualizationLib.dll
 D:\C#\BeatsCreator\SoundsTest\bin\Debug\WPFSoundVisualizationLib.pdb
 D:\C#\BeatsCreator\SoundsTest\bin\Debug\WPFSoundVisualizationLib.xml
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\SingleSampleUserControl.g.cs
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\SingleSampleUserControl.baml

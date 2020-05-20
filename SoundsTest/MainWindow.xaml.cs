@@ -29,61 +29,200 @@ namespace SoundsTest
     public partial class MainWindow : Window
     {
         PathFiles pathFiles;
-        Tags tags;
+        public int index;
 
-        public int index;       
+        WindowViewModel viewModel = new WindowViewModel();
+
+        ObservableCollection<Visibility> obs1 = new ObservableCollection<Visibility> { Visibility.Collapsed };
+        ObservableCollection<Visibility> obs2 = new ObservableCollection<Visibility> { Visibility.Visible };
 
         public MainWindow()
         {
             InitializeComponent();
             pathFiles = new PathFiles();
-            tags = new Tags();            
 
-            DataContext = new WindowViewModel
+            viewModel = new WindowViewModel
             {
-                DrumsSamples = new SamplesModel[]
+                DrumsSamples = new SamplesModel
                 {
-                    new SamplesModel
-                    {
-                        SampleName = pathFiles.drumsSamplesNames
-                    }
-                },
+                    SampleName = pathFiles.drumsSamplesNames,
+                    Tag = Tags.drums,
+                    ShowVolume = Visibility.Collapsed
+                }
+                ,
                 GuitarSamples = new SamplesModel[]
                 {
                     new SamplesModel
                     {
-                        SampleName = pathFiles.guitarSamplesNames
+                        SampleName = pathFiles.guitarSamplesNames,
+                        Tag = Tags.guitar,
+                        ShowVolume = Visibility.Collapsed
                     }
                 },
                 FlutesSamples = new SamplesModel[]
                 {
                     new SamplesModel
                     {
-                        SampleName = new string[] {"fl1", "fl2", "fl3", "fl4"}
+                        SampleName = new string[] { "fl1", "fl2", "fl3", "fl4" },
+                        Tag = Tags.flutes,
+                        ShowVolume = Visibility.Collapsed
                     }
                 },
                 PianoSamples = new SamplesModel[]
                 {
                     new SamplesModel
                     {
-                        SampleName = new string[] {"pn1", "pn2", "pn3", "pn4"}
+                        SampleName = new string[] { "pn1", "pn2", "pn3", "pn4" },
+                        Tag = Tags.piano,
+                        ShowVolume = Visibility.Collapsed
                     }
                 },
                 VoxSamples = new SamplesModel[]
                 {
                     new SamplesModel
                     {
-                        SampleName = new string[] {"vx1", "vx2", "vx3", "vx4"}
+                        SampleName = new string[] { "vx1", "vx2", "vx3", "vx4" },
+                        Tag = Tags.vox,
+                        ShowVolume = Visibility.Collapsed
                     }
                 },
                 FXSamples = new SamplesModel[]
                 {
                     new SamplesModel
                     {
-                        SampleName = new string[] {"fx1", "fx2", "fx3", "fx4"}
+                        SampleName = new string[] { "fx1", "fx2", "fx3", "fx4" },
+                        Tag = Tags.fx,
+                        ShowVolume = Visibility.Collapsed
                     }
-                }
+                },
+                LabelNames = new string[] { "Drums", "Guitar", "Flutes", "Piano", "Vox", "FX" }
             };
+
+            DataContext = viewModel;
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            viewModel = new WindowViewModel
+            {
+                DrumsSamples = new SamplesModel
+                {
+                    SampleName = pathFiles.drumsSamplesNames,
+                    Tag = Tags.drums,
+                    ShowVolume = Visibility.Visible
+                }
+                ,
+                GuitarSamples = new SamplesModel[]
+                {
+                    new SamplesModel
+                    {
+                        SampleName = pathFiles.guitarSamplesNames,
+                        Tag = Tags.guitar,
+                        ShowVolume = Visibility.Visible
+                    }
+                },
+                FlutesSamples = new SamplesModel[]
+                {
+                    new SamplesModel
+                    {
+                        SampleName = new string[] { "fl1", "fl2", "fl3", "fl4" },
+                        Tag = Tags.flutes,
+                        ShowVolume = Visibility.Visible
+                    }
+                },
+                PianoSamples = new SamplesModel[]
+                {
+                    new SamplesModel
+                    {
+                        SampleName = new string[] { "pn1", "pn2", "pn3", "pn4" },
+                        Tag = Tags.piano,
+                        ShowVolume = Visibility.Visible
+                    }
+                },
+                VoxSamples = new SamplesModel[]
+                {
+                    new SamplesModel
+                    {
+                        SampleName = new string[] { "vx1", "vx2", "vx3", "vx4" },
+                        Tag = Tags.vox,
+                        ShowVolume = Visibility.Visible
+                    }
+                },
+                FXSamples = new SamplesModel[]
+                {
+                    new SamplesModel
+                    {
+                        SampleName = new string[] { "fx1", "fx2", "fx3", "fx4" },
+                        Tag = Tags.fx,
+                        ShowVolume = Visibility.Visible
+                    }
+                },
+                LabelNames = new string[] { "Drums", "Guitar", "Flutes", "Piano", "Vox", "FX" }                
+            };
+
+            DataContext = viewModel;
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            viewModel = new WindowViewModel
+            {
+                DrumsSamples = new SamplesModel
+                {
+                    SampleName = pathFiles.drumsSamplesNames,
+                    Tag = Tags.drums,
+                    ShowVolume = Visibility.Collapsed
+                }
+                ,
+                GuitarSamples = new SamplesModel[]
+                {
+                    new SamplesModel
+                    {
+                        SampleName = pathFiles.guitarSamplesNames,
+                        Tag = Tags.guitar,
+                        ShowVolume = Visibility.Collapsed
+                    }
+                },
+                FlutesSamples = new SamplesModel[]
+                {
+                    new SamplesModel
+                    {
+                        SampleName = new string[] { "fl1", "fl2", "fl3", "fl4" },
+                        Tag = Tags.flutes,
+                        ShowVolume = Visibility.Collapsed
+                    }
+                },
+                PianoSamples = new SamplesModel[]
+                {
+                    new SamplesModel
+                    {
+                        SampleName = new string[] { "pn1", "pn2", "pn3", "pn4" },
+                        Tag = Tags.piano,
+                        ShowVolume = Visibility.Collapsed
+                    }
+                },
+                VoxSamples = new SamplesModel[]
+                {
+                    new SamplesModel
+                    {
+                        SampleName = new string[] { "vx1", "vx2", "vx3", "vx4" },
+                        Tag = Tags.vox,
+                        ShowVolume = Visibility.Collapsed
+                    }
+                },
+                FXSamples = new SamplesModel[]
+                {
+                    new SamplesModel
+                    {
+                        SampleName = new string[] { "fx1", "fx2", "fx3", "fx4" },
+                        Tag = Tags.fx,
+                        ShowVolume = Visibility.Collapsed
+                    }
+                },
+                LabelNames = new string[] { "Drums", "Guitar", "Flutes", "Piano", "Vox", "FX" }
+            };
+
+            DataContext = viewModel;
         }
     }
 }

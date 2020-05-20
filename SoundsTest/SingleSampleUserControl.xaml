@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="SoundsTest.UserControlSamples"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SoundsTest"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="150" BorderThickness="0">
+    <Border BorderThickness="1" BorderBrush="Black">
+        <Grid Background="Bisque">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
+                         materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
+                         materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"
+                         materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
+                         Background="MistyRose" BorderBrush="Black" Content="{Binding SampleName[0]}"
+                         Checked="RadioButton_Checked"
+                         Tag="{Binding Tag[0]}"/>
+
+            <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                         materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
+                         materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"
+                         materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
+                         Background="MistyRose" BorderBrush="Black" Content="{Binding SampleName[1]}"
+                         Checked="RadioButton_Checked" 
+                         Tag="{Binding Tag[1]}" Grid.Column="1"/>
+
+            <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                         materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
+                         materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"    
+                         materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
+                         Background="MistyRose" BorderBrush="Black" Content="{Binding SampleName[2]}"
+                         Checked="RadioButton_Checked"
+                         Tag="{Binding Tag[2]}" Grid.Column="0" Grid.Row="1"/>
+
+            <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                         materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
+                         materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"             
+                         materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
+                         Background="MistyRose" BorderBrush="Black" Content="{Binding SampleName[3]}"
+                         Checked="RadioButton_Checked"
+                         Tag="{Binding Tag[3]}" Grid.Column="1" Grid.Row="1"/>
+
+            <!--<WrapPanel Grid.Row="2" Grid.ColumnSpan="2">
+                --><!--<CheckBox Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="15" Height="15" Margin="5 0" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>--><!--
+            </WrapPanel>-->
+            
+            <Slider Grid.Row="2" Grid.ColumnSpan="2" Visibility="{Binding ShowVolume}" x:Name="SliderVolume" Width="auto" Height="20" Margin="5" Value="50" Maximum="100" ValueChanged="Slider_ValueChanged"/>
+        </Grid>
+    </Border>
+</UserControl>

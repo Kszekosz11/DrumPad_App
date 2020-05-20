@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SoundsTest"        
+        xmlns:global="clr-namespace:SoundsTest"        
         mc:Ignorable="d"
         xmlns:samples="clr-namespace:SoundsTest"        
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
@@ -15,63 +16,53 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="500" Width="400" MinHeight="500" MinWidth="400">
+        Title="DrumPad" Height="500" Width="400" MinHeight="500" MinWidth="400">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="30"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="30"/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Drums" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <Label.LayoutTransform>
-                <RotateTransform Angle="270"/>
-            </Label.LayoutTransform>
-        </Label>
+        <Border Grid.Row="0" BorderBrush="AliceBlue" BorderThickness="1 1 1 1" Margin="0 0 0 1">
+            <ToolBarTray Style="{StaticResource MaterialDesignToolBarTray}" IsLocked="True">
+                <ToolBar>
+                    <Button Content="Hip Hop" Width="auto"/>
+                    <Button Content="Trap"/>
+                    <Button Content="Reggae"/>
 
-        <samples:UserControlSamples x:Name="UserControlSamples" DataContext="{Binding DrumsSamples}" Grid.Column="1" Tag="0"/>
-        <samples:UserControlSamples DataContext="{Binding GuitarSamples}" Grid.Column="2" Tag="1"/>
+                    <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">
+                        <materialDesign:PackIcon Kind="VolumeHigh"/>
+                    </CheckBox>
+                </ToolBar>
+            </ToolBarTray>
+        </Border>
 
-        <Label Content="Guitar" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="3">
-            <Label.LayoutTransform>
-                <RotateTransform Angle="90"/>
-            </Label.LayoutTransform>
-        </Label>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <Label Content="Flutes" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="1">
-            <Label.LayoutTransform>
-                <RotateTransform Angle="270"/>
-            </Label.LayoutTransform>
-        </Label>
+            <Label Grid.Column="0" Grid.Row="0" Content="{Binding LabelNames[0]}" Style="{StaticResource LeftLabels}"/>
+            <Label Grid.Column="3" Grid.Row="0" Content="{Binding LabelNames[1]}" Style="{StaticResource RightLabels}"/>
+            <Label Grid.Column="0" Grid.Row="1" Content="{Binding LabelNames[2]}" Style="{StaticResource LeftLabels}"/>
+            <Label Grid.Column="3" Grid.Row="1" Content="{Binding LabelNames[3]}" Style="{StaticResource RightLabels}"/>
+            <Label Grid.Column="0" Grid.Row="2" Content="{Binding LabelNames[4]}" Style="{StaticResource LeftLabels}"/>
+            <Label Grid.Column="3" Grid.Row="2" Content="{Binding LabelNames[5]}" Style="{StaticResource RightLabels}"/>
 
-        <samples:UserControlSamples DataContext="{Binding FlutesSamples}" Grid.Column="1" Grid.Row="1"/>
-        <samples:UserControlSamples DataContext="{Binding PianoSamples}" Grid.Column="2" Grid.Row="1"/>
-
-        <Label Content="Piano" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="1">
-            <Label.LayoutTransform>
-                <RotateTransform Angle="90"/>
-            </Label.LayoutTransform>
-        </Label>
-
-        <Label Content="Vox" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="2">
-            <Label.LayoutTransform>
-                <RotateTransform Angle="270"/>
-            </Label.LayoutTransform>
-        </Label>
-
-        <samples:UserControlSamples DataContext="{Binding VoxSamples}" Grid.Column="1" Grid.Row="2"/>
-        <samples:UserControlSamples DataContext="{Binding FXSamples}" Grid.Column="2" Grid.Row="2"/>
-
-        <Label Content="FX" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="2">
-            <Label.LayoutTransform>
-                <RotateTransform Angle="90"/>
-            </Label.LayoutTransform>
-        </Label>
+            <samples:UserControlSamples Grid.Column="1" Grid.Row="0" DataContext="{Binding DrumsSamples}"/>
+            <samples:UserControlSamples Grid.Column="2" Grid.Row="0" DataContext="{Binding GuitarSamples}"/>
+            <samples:UserControlSamples Grid.Column="1" Grid.Row="1" DataContext="{Binding FlutesSamples}"/>
+            <samples:UserControlSamples Grid.Column="2" Grid.Row="1" DataContext="{Binding PianoSamples}"/>
+            <samples:UserControlSamples Grid.Column="1" Grid.Row="2" DataContext="{Binding VoxSamples}"/>
+            <samples:UserControlSamples Grid.Column="2" Grid.Row="2" DataContext="{Binding FXSamples}"/>
+        </Grid>
     </Grid>
 </Window>

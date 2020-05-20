@@ -76,7 +76,7 @@
     </ApplicationDefinition>
     <Compile Include="SamplesModel.cs" />
     <Compile Include="WindowViewModel.cs" />
-    <Page Include="UserControlSamples.xaml">
+    <Page Include="SingleSampleUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,8 +89,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Tags.cs" />
-    <Compile Include="UserControlSamples.xaml.cs">
-      <DependentUpon>UserControlSamples.xaml</DependentUpon>
+    <Compile Include="SingleSampleUserControl.xaml.cs">
+      <DependentUpon>SingleSampleUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="EffectsQuantity.cs" />
     <Compile Include="MainWindow.xaml.cs">

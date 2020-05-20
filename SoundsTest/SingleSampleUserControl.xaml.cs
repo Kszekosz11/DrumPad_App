@@ -24,24 +24,38 @@ namespace SoundsTest
     /// </summary>
     public partial class UserControlSamples : UserControl
     {
-        WindowsMediaPlayer mediaPlayer;        
+        WindowsMediaPlayer samplePlayer = new WindowsMediaPlayer();
         PathFiles pathFiles;
-        int SampleTag;        
+        private int SampleTag;
 
         public UserControlSamples()
         {
             InitializeComponent();
-
-            mediaPlayer = new WindowsMediaPlayer();
             pathFiles = new PathFiles();
-        }        
+        }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
+            samplePlayer.enabled = true;
             SampleTag = int.Parse((sender as Control).Tag.ToString());
-            mediaPlayer.URL = pathFiles.allEffects[SampleTag];
-            mediaPlayer.settings.setMode("loop", true);
-            mediaPlayer.controls.play();            
+            samplePlayer.URL = pathFiles.allEffects[SampleTag];
+            samplePlayer.settings.setMode("loop", true);
+            samplePlayer.controls.play();
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            samplePlayer.settings.volume = (int)SliderVolume.Value;
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            samplePlayer.settings.mute = true;
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            samplePlayer.settings.mute = false;
         }
     }
 }
