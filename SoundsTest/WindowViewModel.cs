@@ -11,12 +11,12 @@ namespace SoundsTest
     public class WindowViewModel
     {
         public SamplesModel DrumsSamples { get; set; }
-        public ICollection<SamplesModel> GuitarSamples { get; set; }
-        public ICollection<SamplesModel> FlutesSamples { get; set; }
-        public ICollection<SamplesModel> PianoSamples { get; set; }
-        public ICollection<SamplesModel> VoxSamples { get; set; }
-        public ICollection<SamplesModel> FXSamples { get; set; }
+        public SamplesModel GuitarSamples { get; set; }
+        public SamplesModel FlutesSamples { get; set; }
+        public SamplesModel PianoSamples { get; set; }
+        public SamplesModel VoxSamples { get; set; }
+        public SamplesModel FXSamples { get; set; }
         public string[] LabelNames { get; set; }
-        
+        public string[] MusicStyles { get; set; }        
     }
 }

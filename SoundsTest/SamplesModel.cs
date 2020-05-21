@@ -13,8 +13,8 @@ namespace SoundsTest
 {
     public class SamplesModel
     {
-        public string[] SampleName { get; set; }
-        public string[] Tag { get; set; }
+        public string[] SampleNames { get; set; }
+        public string[] Tags { get; set; }
         public Visibility ShowVolume { get; set; }
     }
 }

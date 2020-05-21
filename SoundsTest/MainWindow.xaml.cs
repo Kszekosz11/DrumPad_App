@@ -45,57 +45,44 @@ namespace SoundsTest
             {
                 DrumsSamples = new SamplesModel
                 {
-                    SampleName = pathFiles.drumsSamplesNames,
-                    Tag = Tags.drums,
+                    SampleNames = pathFiles.drumsSamplesNames,
+                    Tags = Tags.drums,
                     ShowVolume = Visibility.Collapsed
                 }
                 ,
-                GuitarSamples = new SamplesModel[]
-                {
-                    new SamplesModel
-                    {
-                        SampleName = pathFiles.guitarSamplesNames,
-                        Tag = Tags.guitar,
-                        ShowVolume = Visibility.Collapsed
-                    }
+                GuitarSamples = new SamplesModel
+                {                    
+                        SampleNames = pathFiles.guitarSamplesNames,
+                        Tags = Tags.guitar,
+                        ShowVolume = Visibility.Collapsed                    
                 },
-                FlutesSamples = new SamplesModel[]
+                FlutesSamples = new SamplesModel
                 {
-                    new SamplesModel
-                    {
-                        SampleName = new string[] { "fl1", "fl2", "fl3", "fl4" },
-                        Tag = Tags.flutes,
+                        SampleNames = new string[] { "fl1", "fl2", "fl3", "fl4" },
+                        Tags = Tags.flutes,
                         ShowVolume = Visibility.Collapsed
-                    }
+                 
                 },
-                PianoSamples = new SamplesModel[]
+                PianoSamples = new SamplesModel
+                {                    
+                        SampleNames = new string[] { "pn1", "pn2", "pn3", "pn4" },
+                        Tags = Tags.piano,
+                        ShowVolume = Visibility.Collapsed
+                },
+                VoxSamples = new SamplesModel
                 {
-                    new SamplesModel
-                    {
-                        SampleName = new string[] { "pn1", "pn2", "pn3", "pn4" },
-                        Tag = Tags.piano,
+                        SampleNames = new string[] { "vx1", "vx2", "vx3", "vx4" },
+                        Tags = Tags.vox,
                         ShowVolume = Visibility.Collapsed
-                    }
                 },
-                VoxSamples = new SamplesModel[]
-                {
-                    new SamplesModel
-                    {
-                        SampleName = new string[] { "vx1", "vx2", "vx3", "vx4" },
-                        Tag = Tags.vox,
+                FXSamples = new SamplesModel
+                {                    
+                        SampleNames = new string[] { "fx1", "fx2", "fx3", "fx4" },
+                        Tags = Tags.fx,
                         ShowVolume = Visibility.Collapsed
-                    }
                 },
-                FXSamples = new SamplesModel[]
-                {
-                    new SamplesModel
-                    {
-                        SampleName = new string[] { "fx1", "fx2", "fx3", "fx4" },
-                        Tag = Tags.fx,
-                        ShowVolume = Visibility.Collapsed
-                    }
-                },
-                LabelNames = new string[] { "Drums", "Guitar", "Flutes", "Piano", "Vox", "FX" }
+                LabelNames = new string[] { "Drums", "Guitar", "Flutes", "Piano", "Vox", "FX" },
+                MusicStyles = new string[] {"Hip Hop", "Reggae", "Trap", "House", "Disco", "Rock"}
             };
 
             DataContext = viewModel;
@@ -106,11 +93,11 @@ namespace SoundsTest
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(10);
-            timer.Tick += timer_Tick;
+            timer.Tick += Timer_Tick;
             timer.Start();
         }
 
-        void timer_Tick(object sender, EventArgs e)
+        void Timer_Tick(object sender, EventArgs e)
         {
             if (ComboBoxChooseDevice.SelectedItem != null)
             {
@@ -128,139 +115,127 @@ namespace SoundsTest
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            //var maxPeakProvider = new MaxPeakProvider();
-            //var rmsPeakProvider = nowy RmsPeakProvider(blockSize); // np 200
-            //var samplingPeakProvider = new SamplingPeakProvider(sampleInterval); // np 200
-            //var averagePeakProvider = nowy AveragePeakProvider(scaleFactor);
+        {            
+            //viewModel = new WindowViewModel
+            //{
+            //    DrumsSamples = new SamplesModel
+            //    {
+            //        SampleName = pathFiles.drumsSamplesNames,
+            //        Tag = Tags.drums,
+            //        ShowVolume = Visibility.Visible
+            //    }
+            //    ,
+            //    GuitarSamples = new SamplesModel[]
+            //    {
+            //        new SamplesModel
+            //        {
+            //            SampleName = pathFiles.guitarSamplesNames,
+            //            Tag = Tags.guitar,
+            //            ShowVolume = Visibility.Visible
+            //        }
+            //    },
+            //    FlutesSamples = new SamplesModel[]
+            //    {
+            //        new SamplesModel
+            //        {
+            //            SampleName = new string[] { "fl1", "fl2", "fl3", "fl4" },
+            //            Tag = Tags.flutes,
+            //            ShowVolume = Visibility.Visible
+            //        }
+            //    },
+            //    PianoSamples = new SamplesModel[]
+            //    {
+            //        new SamplesModel
+            //        {
+            //            SampleName = new string[] { "pn1", "pn2", "pn3", "pn4" },
+            //            Tag = Tags.piano,
+            //            ShowVolume = Visibility.Visible
+            //        }
+            //    },
+            //    VoxSamples = new SamplesModel[]
+            //    {
+            //        new SamplesModel
+            //        {
+            //            SampleName = new string[] { "vx1", "vx2", "vx3", "vx4" },
+            //            Tag = Tags.vox,
+            //            ShowVolume = Visibility.Visible
+            //        }
+            //    },
+            //    FXSamples = new SamplesModel[]
+            //    {
+            //        new SamplesModel
+            //        {
+            //            SampleName = new string[] { "fx1", "fx2", "fx3", "fx4" },
+            //            Tag = Tags.fx,
+            //            ShowVolume = Visibility.Visible
+            //        }
+            //    },
+            //    LabelNames = new string[] { "Drums", "Guitar", "Flutes", "Piano", "Vox", "FX" }                
+            //};
 
-            //var myRendererSettings = new StandardWaveFormRendererSettings();
-            //myRendererSettings.Width = 640;
-            //myRendererSettings.TopHeight = 32;
-            //myRendererSettings.BottomHeight = 32;
-
-
-
-            viewModel = new WindowViewModel
-            {
-                DrumsSamples = new SamplesModel
-                {
-                    SampleName = pathFiles.drumsSamplesNames,
-                    Tag = Tags.drums,
-                    ShowVolume = Visibility.Visible
-                }
-                ,
-                GuitarSamples = new SamplesModel[]
-                {
-                    new SamplesModel
-                    {
-                        SampleName = pathFiles.guitarSamplesNames,
-                        Tag = Tags.guitar,
-                        ShowVolume = Visibility.Visible
-                    }
-                },
-                FlutesSamples = new SamplesModel[]
-                {
-                    new SamplesModel
-                    {
-                        SampleName = new string[] { "fl1", "fl2", "fl3", "fl4" },
-                        Tag = Tags.flutes,
-                        ShowVolume = Visibility.Visible
-                    }
-                },
-                PianoSamples = new SamplesModel[]
-                {
-                    new SamplesModel
-                    {
-                        SampleName = new string[] { "pn1", "pn2", "pn3", "pn4" },
-                        Tag = Tags.piano,
-                        ShowVolume = Visibility.Visible
-                    }
-                },
-                VoxSamples = new SamplesModel[]
-                {
-                    new SamplesModel
-                    {
-                        SampleName = new string[] { "vx1", "vx2", "vx3", "vx4" },
-                        Tag = Tags.vox,
-                        ShowVolume = Visibility.Visible
-                    }
-                },
-                FXSamples = new SamplesModel[]
-                {
-                    new SamplesModel
-                    {
-                        SampleName = new string[] { "fx1", "fx2", "fx3", "fx4" },
-                        Tag = Tags.fx,
-                        ShowVolume = Visibility.Visible
-                    }
-                },
-                LabelNames = new string[] { "Drums", "Guitar", "Flutes", "Piano", "Vox", "FX" }                
-            };
-
-            DataContext = viewModel;
+            //DataContext = viewModel;
         }
 
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            viewModel = new WindowViewModel
-            {
-                DrumsSamples = new SamplesModel
-                {
-                    SampleName = pathFiles.drumsSamplesNames,
-                    Tag = Tags.drums,
-                    ShowVolume = Visibility.Collapsed
-                }
-                ,
-                GuitarSamples = new SamplesModel[]
-                {
-                    new SamplesModel
-                    {
-                        SampleName = pathFiles.guitarSamplesNames,
-                        Tag = Tags.guitar,
-                        ShowVolume = Visibility.Collapsed
-                    }
-                },
-                FlutesSamples = new SamplesModel[]
-                {
-                    new SamplesModel
-                    {
-                        SampleName = new string[] { "fl1", "fl2", "fl3", "fl4" },
-                        Tag = Tags.flutes,
-                        ShowVolume = Visibility.Collapsed
-                    }
-                },
-                PianoSamples = new SamplesModel[]
-                {
-                    new SamplesModel
-                    {
-                        SampleName = new string[] { "pn1", "pn2", "pn3", "pn4" },
-                        Tag = Tags.piano,
-                        ShowVolume = Visibility.Collapsed
-                    }
-                },
-                VoxSamples = new SamplesModel[]
-                {
-                    new SamplesModel
-                    {
-                        SampleName = new string[] { "vx1", "vx2", "vx3", "vx4" },
-                        Tag = Tags.vox,
-                        ShowVolume = Visibility.Collapsed
-                    }
-                },
-                FXSamples = new SamplesModel[]
-                {
-                    new SamplesModel
-                    {
-                        SampleName = new string[] { "fx1", "fx2", "fx3", "fx4" },
-                        Tag = Tags.fx,
-                        ShowVolume = Visibility.Collapsed
-                    }
-                },
-                LabelNames = new string[] { "Drums", "Guitar", "Flutes", "Piano", "Vox", "FX" }
-            };
+            //viewModel = new WindowViewModel
+            //{
+            //    DrumsSamples = new SamplesModel
+            //    {
+            //        SampleName = pathFiles.drumsSamplesNames,
+            //        Tag = Tags.drums,
+            //        ShowVolume = Visibility.Collapsed
+            //    }
+            //    ,
+            //    GuitarSamples = new SamplesModel[]
+            //    {
+            //        new SamplesModel
+            //        {
+            //            SampleName = pathFiles.guitarSamplesNames,
+            //            Tag = Tags.guitar,
+            //            ShowVolume = Visibility.Collapsed
+            //        }
+            //    },
+            //    FlutesSamples = new SamplesModel[]
+            //    {
+            //        new SamplesModel
+            //        {
+            //            SampleName = new string[] { "fl1", "fl2", "fl3", "fl4" },
+            //            Tag = Tags.flutes,
+            //            ShowVolume = Visibility.Collapsed
+            //        }
+            //    },
+            //    PianoSamples = new SamplesModel[]
+            //    {
+            //        new SamplesModel
+            //        {
+            //            SampleName = new string[] { "pn1", "pn2", "pn3", "pn4" },
+            //            Tag = Tags.piano,
+            //            ShowVolume = Visibility.Collapsed
+            //        }
+            //    },
+            //    VoxSamples = new SamplesModel[]
+            //    {
+            //        new SamplesModel
+            //        {
+            //            SampleName = new string[] { "vx1", "vx2", "vx3", "vx4" },
+            //            Tag = Tags.vox,
+            //            ShowVolume = Visibility.Collapsed
+            //        }
+            //    },
+            //    FXSamples = new SamplesModel[]
+            //    {
+            //        new SamplesModel
+            //        {
+            //            SampleName = new string[] { "fx1", "fx2", "fx3", "fx4" },
+            //            Tag = Tags.fx,
+            //            ShowVolume = Visibility.Collapsed
+            //        }
+            //    },
+            //    LabelNames = new string[] { "Drums", "Guitar", "Flutes", "Piano", "Vox", "FX" }
+            //};
 
-            DataContext = viewModel;
+            //DataContext = viewModel;
         }
     }
 }

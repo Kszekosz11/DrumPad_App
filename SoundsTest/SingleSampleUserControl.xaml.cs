@@ -47,15 +47,5 @@ namespace SoundsTest
         {
             samplePlayer.settings.volume = (int)SliderVolume.Value;
         }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            samplePlayer.settings.mute = true;
-        }
-
-        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
-        {
-            samplePlayer.settings.mute = false;
-        }
     }
 }

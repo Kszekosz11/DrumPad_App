@@ -23,33 +23,33 @@
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
                          materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"
                          materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
-                         Background="MistyRose" BorderBrush="Black" Margin="5" Content="{Binding SampleName[0]}"
+                         Background="MistyRose" BorderBrush="Black" Margin="5" Content="{Binding SampleNames[0]}"
                          Checked="RadioButton_Checked"
-                         Tag="{Binding Tag[0]}"/>
+                         Tag="{Binding Tags[0]}"/>
 
             <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
                          materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"
                          materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
-                         Background="MistyRose" BorderBrush="Black" Content="{Binding SampleName[1]}"
+                         Background="MistyRose" BorderBrush="Black" Content="{Binding SampleNames[1]}"
                          Checked="RadioButton_Checked" 
-                         Tag="{Binding Tag[1]}" Grid.Column="1"/>
+                         Tag="{Binding Tags[1]}" Grid.Column="1"/>
 
             <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
                          materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"    
                          materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
-                         Background="MistyRose" BorderBrush="Black" Content="{Binding SampleName[2]}"
+                         Background="MistyRose" BorderBrush="Black" Content="{Binding SampleNames[2]}"
                          Checked="RadioButton_Checked"
-                         Tag="{Binding Tag[2]}" Grid.Column="0" Grid.Row="1"/>
+                         Tag="{Binding Tags[2]}" Grid.Column="0" Grid.Row="1"/>
 
             <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
                          materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"             
                          materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
-                         Background="MistyRose" BorderBrush="Black" Content="{Binding SampleName[3]}"
+                         Background="MistyRose" BorderBrush="Black" Content="{Binding SampleNames[3]}"
                          Checked="RadioButton_Checked"
-                         Tag="{Binding Tag[3]}" Grid.Column="1" Grid.Row="1"/>
+                         Tag="{Binding Tags[3]}" Grid.Column="1" Grid.Row="1"/>
 
             <Slider Grid.Row="2" Grid.ColumnSpan="2" Visibility="{Binding ShowVolume}" x:Name="SliderVolume" Width="auto" Height="20" Margin="5" Value="50" Maximum="100" ValueChanged="Slider_ValueChanged"/>
         </Grid>
