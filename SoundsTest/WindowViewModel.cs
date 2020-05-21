@@ -16,6 +16,7 @@ namespace SoundsTest
         public ICollection<SamplesModel> PianoSamples { get; set; }
         public ICollection<SamplesModel> VoxSamples { get; set; }
         public ICollection<SamplesModel> FXSamples { get; set; }
-        public string[] LabelNames { get; set; }        
+        public string[] LabelNames { get; set; }
+        
     }
 }

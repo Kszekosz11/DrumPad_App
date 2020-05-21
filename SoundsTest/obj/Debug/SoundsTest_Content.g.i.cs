@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("audiovumetersinkfilter.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("basswasapi.dll")]
 
 

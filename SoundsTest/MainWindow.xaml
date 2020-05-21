@@ -7,8 +7,7 @@
         xmlns:global="clr-namespace:SoundsTest"        
         mc:Ignorable="d"
         xmlns:samples="clr-namespace:SoundsTest"        
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:WPFSoundVisualizationLib1="clr-namespace:WPFSoundVisualizationLib;assembly=WPFSoundVisualizationLib"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"       
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -16,12 +15,16 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="DrumPad" Height="500" Width="400" MinHeight="500" MinWidth="400">
+        Title="DrumPad" Height="600" Width="400" MinHeight="600" MinWidth="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
         <Border Grid.Row="0" BorderBrush="AliceBlue" BorderThickness="1 1 1 1" Margin="0 0 0 1">
             <ToolBarTray Style="{StaticResource MaterialDesignToolBarTray}" IsLocked="True">
@@ -33,6 +36,7 @@
                     <CheckBox Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked">
                         <materialDesign:PackIcon Kind="VolumeHigh"/>
                     </CheckBox>
+                    <ComboBox x:Name="ComboBoxChooseDevice" Width="80" Margin="10 0 0 0"/>
                 </ToolBar>
             </ToolBarTray>
         </Border>
@@ -64,5 +68,19 @@
             <samples:UserControlSamples Grid.Column="1" Grid.Row="2" DataContext="{Binding VoxSamples}"/>
             <samples:UserControlSamples Grid.Column="2" Grid.Row="2" DataContext="{Binding FXSamples}"/>
         </Grid>
+
+        <Border Grid.Row="2" Visibility="{Binding DrumsSamples.ShowVolume}" BorderThickness="1">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <ProgressBar Orientation="Vertical" x:Name="ProgressBarVolume0" Margin="10 2" Width="80" Height="20"/>
+                <ProgressBar Orientation="Vertical" x:Name="ProgressBarVolume1" Margin="10 2" Width="80" Height="20"/>
+                <ProgressBar Orientation="Vertical" x:Name="ProgressBarVolume2" Margin="10 2" Width="80" Height="20"/>
+                <ProgressBar Orientation="Vertical" x:Name="ProgressBarVolume3" Margin="10 2" Width="80" Height="20"/>
+                <ProgressBar Orientation="Vertical" x:Name="ProgressBarVolume4" Margin="10 2" Width="80" Height="20"/>
+                <ProgressBar Orientation="Vertical" x:Name="ProgressBarVolume5" Margin="10 2" Width="80" Height="20"/>
+                <ProgressBar Orientation="Vertical" x:Name="ProgressBarVolume6" Margin="10 2" Width="80" Height="20"/>
+                <ProgressBar Orientation="Vertical" x:Name="ProgressBarVolume7" Margin="10 2" Width="80" Height="20"/>
+                <ProgressBar Orientation="Vertical" x:Name="ProgressBarVolume8" Margin="10 2" Width="80" Height="20"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

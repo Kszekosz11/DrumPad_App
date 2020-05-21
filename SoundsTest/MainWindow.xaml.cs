@@ -1,5 +1,4 @@
-﻿using NAudio.Wave;
-using NAudio.Wave.SampleProviders;
+﻿using NAudio.CoreAudioApi;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using WMPLib;
 
 namespace SoundsTest
@@ -31,15 +31,15 @@ namespace SoundsTest
         PathFiles pathFiles;
         public int index;
 
-        WindowViewModel viewModel = new WindowViewModel();
+        private MMDevice device;
+        MMDeviceEnumerator enumerator;
 
-        ObservableCollection<Visibility> obs1 = new ObservableCollection<Visibility> { Visibility.Collapsed };
-        ObservableCollection<Visibility> obs2 = new ObservableCollection<Visibility> { Visibility.Visible };
+        WindowViewModel viewModel = new WindowViewModel();
 
         public MainWindow()
         {
             InitializeComponent();
-            pathFiles = new PathFiles();
+            pathFiles = new PathFiles();            
 
             viewModel = new WindowViewModel
             {
@@ -99,10 +99,48 @@ namespace SoundsTest
             };
 
             DataContext = viewModel;
+
+            enumerator = new MMDeviceEnumerator();
+            var devices = enumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
+            ComboBoxChooseDevice.ItemsSource = devices.ToArray();
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(10);
+            timer.Tick += timer_Tick;
+            timer.Start();
+        }
+
+        void timer_Tick(object sender, EventArgs e)
+        {
+            if (ComboBoxChooseDevice.SelectedItem != null)
+            {
+                device = (MMDevice)ComboBoxChooseDevice.SelectedItem;
+                ProgressBarVolume0.Value = (int)(Math.Round(device.AudioMeterInformation.MasterPeakValue * 100));
+                ProgressBarVolume1.Value = (int)(Math.Round(device.AudioMeterInformation.MasterPeakValue * 100));
+                ProgressBarVolume2.Value = (int)(Math.Round(device.AudioMeterInformation.MasterPeakValue * 100));
+                ProgressBarVolume3.Value = (int)(Math.Round(device.AudioMeterInformation.MasterPeakValue * 100));
+                ProgressBarVolume4.Value = (int)(Math.Round(device.AudioMeterInformation.MasterPeakValue * 100));
+                ProgressBarVolume5.Value = (int)(Math.Round(device.AudioMeterInformation.MasterPeakValue * 100));
+                ProgressBarVolume6.Value = (int)(Math.Round(device.AudioMeterInformation.MasterPeakValue * 100));
+                ProgressBarVolume7.Value = (int)(Math.Round(device.AudioMeterInformation.MasterPeakValue * 100));
+                ProgressBarVolume8.Value = (int)(Math.Round(device.AudioMeterInformation.MasterPeakValue * 100));
+            }            
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
+            //var maxPeakProvider = new MaxPeakProvider();
+            //var rmsPeakProvider = nowy RmsPeakProvider(blockSize); // np 200
+            //var samplingPeakProvider = new SamplingPeakProvider(sampleInterval); // np 200
+            //var averagePeakProvider = nowy AveragePeakProvider(scaleFactor);
+
+            //var myRendererSettings = new StandardWaveFormRendererSettings();
+            //myRendererSettings.Width = 640;
+            //myRendererSettings.TopHeight = 32;
+            //myRendererSettings.BottomHeight = 32;
+
+
+
             viewModel = new WindowViewModel
             {
                 DrumsSamples = new SamplesModel
