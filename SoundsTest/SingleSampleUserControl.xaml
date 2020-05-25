@@ -4,9 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SoundsTest"
+             xmlns:converters="clr-namespace:SoundsTest.Converters"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="150" BorderThickness="0">
+             d:DesignHeight="150" d:DesignWidth="150" BorderThickness="0" x:Name="me">
+    <UserControl.Resources>
+        <converters:TagToVisibilityConverter x:Key="TagToVisibilityConverter"/>
+    </UserControl.Resources>
     <Border BorderThickness="1" BorderBrush="Black">
         <Grid Background="Bisque">
             <Grid.ColumnDefinitions>
@@ -51,7 +55,11 @@
                          Checked="RadioButton_Checked"
                          Tag="{Binding Tags[3]}" Grid.Column="1" Grid.Row="1"/>
 
-            <Slider Grid.Row="2" Grid.ColumnSpan="2" Visibility="{Binding ShowVolume}" x:Name="SliderVolume" Width="auto" Height="20" Margin="5" Value="50" Maximum="100" ValueChanged="Slider_ValueChanged"/>
+            <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Visibility="{Binding ElementName=me, Path=Tag, Converter={StaticResource TagToVisibilityConverter}}">
+            <Slider x:Name="SliderVolume" Width="auto" Height="20" Margin="5" Value="{Binding Volume}" Maximum="100" ValueChanged="Slider_ValueChanged"/>
+            <Slider x:Name="SliderRate" Width="auto" Height="20" Margin="5" Value="{Binding Rate}" Minimum="0.75" Maximum="1.25" ValueChanged="SliderRate_ValueChanged" Thumb.DragStarted="SliderRate_DragStarted" Thumb.DragCompleted="SliderRate_DragCompleted"/>
+            </StackPanel>
+                
         </Grid>
     </Border>
 </UserControl>

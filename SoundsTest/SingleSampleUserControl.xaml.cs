@@ -36,16 +36,32 @@ namespace SoundsTest
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            samplePlayer.enabled = true;
             SampleTag = int.Parse((sender as Control).Tag.ToString());
             samplePlayer.URL = pathFiles.allEffects[SampleTag];
             samplePlayer.settings.setMode("loop", true);
+            samplePlayer.settings.volume = (int)SliderVolume.Value;
+            samplePlayer.settings.rate = SliderRate.Value;
             samplePlayer.controls.play();
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             samplePlayer.settings.volume = (int)SliderVolume.Value;
+        }
+
+        private void SliderRate_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            samplePlayer.settings.rate = SliderRate.Value;
+        }
+
+        private void SliderRate_DragStarted(object sender, System.Windows.Controls.Primitives.DragStartedEventArgs e)
+        {
+            samplePlayer.controls.pause();
+        }
+
+        private void SliderRate_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
+        {
+            samplePlayer.controls.play();
         }
     }
 }

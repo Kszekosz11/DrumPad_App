@@ -48,5 +48,7 @@ D:\C#\BeatsCreator\SoundsTest\bin\Debug\AxInterop.WMPLib.dll
 D:\C#\BeatsCreator\SoundsTest\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\C#\BeatsCreator\SoundsTest\obj\Debug\SingleSampleUserControl.g.cs
 D:\C#\BeatsCreator\SoundsTest\obj\Debug\SingleSampleUserControl.baml
-D:\C#\BeatsCreator\SoundsTest\bin\Debug\NAudio.dll
-D:\C#\BeatsCreator\SoundsTest\bin\Debug\NAudio.xml
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\SoundsTest_Content.g.cs
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\Spectrum.g.cs
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\Spectrum.baml
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Bass.Net.dll

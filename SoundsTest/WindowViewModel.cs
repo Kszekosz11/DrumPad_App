@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,6 @@ namespace SoundsTest
         public SamplesModel VoxSamples { get; set; }
         public SamplesModel FXSamples { get; set; }
         public string[] LabelNames { get; set; }
-        public string[] MusicStyles { get; set; }        
+        public string[] MusicStyles { get; set; }
     }
 }
