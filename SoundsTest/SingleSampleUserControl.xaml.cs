@@ -24,7 +24,7 @@ namespace SoundsTest
     /// </summary>
     public partial class UserControlSamples : UserControl
     {
-        WindowsMediaPlayer samplePlayer = new WindowsMediaPlayer();
+        readonly WindowsMediaPlayer samplePlayer = new WindowsMediaPlayer();
         PathFiles pathFiles;
         private int SampleTag;
 
@@ -37,7 +37,7 @@ namespace SoundsTest
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {            
             SampleTag = int.Parse((sender as Control).Tag.ToString());
-            samplePlayer.URL = pathFiles.allHipHopEffects[SampleTag];
+            samplePlayer.URL = pathFiles.allEffects[SampleTag];
             samplePlayer.settings.setMode("loop", true);
             samplePlayer.settings.volume = (int)SliderVolume.Value;
             samplePlayer.settings.rate = SliderRate.Value;

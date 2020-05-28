@@ -13,12 +13,25 @@ namespace SoundsTest
 {
     public class SamplesModel : INotifyPropertyChanged
     {
-        private int volume;
-        private double rate;
-        private Visibility showVolume;
-        private string[] tags;
+        private string[] sampleNames;
+        public string[] SampleNames
+        {
+            get
+            {
+                return sampleNames;
+            }
+            set
+            {
+                if (sampleNames == value)
+                {
+                    return;
+                }
+                sampleNames = value;
+                OnPropertyChanged(nameof(SampleNames));
+            }
+        }
 
-        public string[] SampleNames { get; set; }
+        private string[] tags;
         public string[] Tags
         {
             get
@@ -35,6 +48,8 @@ namespace SoundsTest
                 OnPropertyChanged(nameof(Tags));
             }
         }
+        
+        private int volume;
         public int Volume
         {
             get
@@ -49,8 +64,10 @@ namespace SoundsTest
                 }
                 volume = value;
                 OnPropertyChanged(nameof(Volume));
-            }            
-    }
+            }
+        }
+        
+        private double rate;
         public double Rate
         {
             get
@@ -67,6 +84,8 @@ namespace SoundsTest
                 OnPropertyChanged(nameof(Rate));
             }
         }
+        
+        private Visibility showVolume;
         public Visibility ShowVolume
         {
             get

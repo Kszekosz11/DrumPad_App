@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.ComponentModel;
 
 namespace SoundsTest
 {
     public class WindowViewModel : INotifyPropertyChanged
     {
-        public SamplesModel DrumsSamples { get; set; }
-        public SamplesModel GuitarSamples { get; set; }
-        public SamplesModel FlutesSamples { get; set; }
-        public SamplesModel PianoSamples { get; set; }
-        public SamplesModel VoxSamples { get; set; }
-        public SamplesModel FXSamples { get; set; }
+        public SamplesModel FirstSamples { get; set; }
+        public SamplesModel SecondSamples { get; set; }
+        public SamplesModel ThirdSamples { get; set; }
+        public SamplesModel FourSamples { get; set; }
+        public SamplesModel FiveSamples { get; set; }
+        public SamplesModel SixSamples { get; set; }
+        public string[] MusicStyles { get; set; }
+
         private string[] labelNames;
         public string[] LabelNames
         {
@@ -34,7 +29,6 @@ namespace SoundsTest
                 OnPropertyChanged(nameof(LabelNames));
             }
         }
-        public string[] MusicStyles { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

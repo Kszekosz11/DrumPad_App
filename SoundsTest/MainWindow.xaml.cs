@@ -29,7 +29,9 @@ namespace SoundsTest
     public partial class MainWindow : Window
     {
         PathFiles pathFiles;
-        WindowViewModel viewModel = new WindowViewModel();
+        public WindowViewModel viewModel = new WindowViewModel();
+        SetTags setTags;
+        SetSampleNames setSampleNames;
         private Analyzer analyzer;
 
         public MainWindow()
@@ -37,52 +39,48 @@ namespace SoundsTest
             InitializeComponent();
 
             pathFiles = new PathFiles();
+            setTags = new SetTags();
+            setSampleNames = new SetSampleNames();
             analyzer = new Analyzer(PbL, PbR, Spectrum, ComboBoxChooseDevice);
+
             viewModel = new WindowViewModel
             {
-                DrumsSamples = new SamplesModel
+                FirstSamples = new SamplesModel
                 {
-                    SampleNames = pathFiles.drumsSamplesNames,
-                    Tags = Tags.drums,
+                    Tags = Tags.hipHopDrum,
                     Volume = DefaultValues.volume,
                     Rate = DefaultValues.rate
                 },
-                GuitarSamples = new SamplesModel
+                SecondSamples = new SamplesModel
                 {
-                    SampleNames = pathFiles.guitarSamplesNames,
-                    Tags = Tags.guitar,
+                    Tags = Tags.hipHopBass,
                     Volume = DefaultValues.volume,
                     Rate = DefaultValues.rate
                 },
-                FlutesSamples = new SamplesModel
-                {
-                    SampleNames = new string[] { "fl1", "fl2", "fl3", "fl4" },
-                    Tags = Tags.flutes,
+                ThirdSamples = new SamplesModel
+                {                 
+                    Tags = Tags.hipHopSynth,
                     Volume = DefaultValues.volume,
                     Rate = DefaultValues.rate
                 },
-                PianoSamples = new SamplesModel
-                {
-                    SampleNames = new string[] { "pn1", "pn2", "pn3", "pn4" },
-                    Tags = Tags.piano,
+                FourSamples = new SamplesModel
+                {                 
+                    Tags = Tags.hipHopPiano,
                     Volume = DefaultValues.volume,
                     Rate = DefaultValues.rate
                 },
-                VoxSamples = new SamplesModel
-                {
-                    SampleNames = new string[] { "vx1", "vx2", "vx3", "vx4" },
-                    Tags = Tags.vox,
+                FiveSamples = new SamplesModel
+                {                 
+                    Tags = Tags.hipHopVox,
                     Volume = DefaultValues.volume,
                     Rate = DefaultValues.rate
                 },
-                FXSamples = new SamplesModel
-                {
-                    SampleNames = new string[] { "fx1", "fx2", "fx3", "fx4" },
-                    Tags = Tags.fx,
+                SixSamples = new SamplesModel
+                {                 
+                    Tags = Tags.hipHopFx,
                     Volume = DefaultValues.volume,
                     Rate = DefaultValues.rate
                 },
-                LabelNames = WindowControlsContent.labelHipHopNames,
                 MusicStyles = WindowControlsContent.musicStyles
             };
 
@@ -102,22 +100,19 @@ namespace SoundsTest
             switch (tag)
             {
                 case 0:
-                    viewModel.DrumsSamples.Tags = Tags.drums;
-                    viewModel.GuitarSamples.Tags = Tags.guitar;
-                    viewModel.FlutesSamples.Tags = Tags.flutes;
-                    viewModel.PianoSamples.Tags = Tags.piano;
-                    viewModel.VoxSamples.Tags = Tags.vox;
-                    viewModel.FXSamples.Tags = Tags.fx;
+                    setTags.SetHipHopTags(this);
+                    setSampleNames.SetHipHopSamplesName(this);
                     viewModel.LabelNames = WindowControlsContent.labelHipHopNames;
                     break;
                 case 1:
-                    viewModel.DrumsSamples.Tags = Tags.drums2;
-                    viewModel.GuitarSamples.Tags = Tags.guitar2;
-                    viewModel.FlutesSamples.Tags = Tags.flutes2;
-                    viewModel.PianoSamples.Tags = Tags.piano2;
-                    viewModel.VoxSamples.Tags = Tags.vox2;
-                    viewModel.FXSamples.Tags = Tags.fx2;
+                    setTags.SetReggaeTags(this);
+                    setSampleNames.SetReggaeSamplesName(this);
                     viewModel.LabelNames = WindowControlsContent.labelReggaeNames;
+                    break;
+                case 2:
+                    setTags.SetHouseTags(this);
+                    setSampleNames.SetHouseSamplesName(this);
+                    viewModel.LabelNames = WindowControlsContent.labelHouseNames;
                     break;
                 default:
                     break;
