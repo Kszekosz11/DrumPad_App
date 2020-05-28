@@ -10,20 +10,32 @@ namespace SoundsTest
 {
     public class PathFiles
     {
-        public string[] hipHopBaseLocation = new string[(int)EffectsQuantity.hipHopBeats];
-        public string[] drumsLocation = new string[(int)EffectsQuantity.drums];
-        public string[] guitarLocation = new string[(int)EffectsQuantity.guitar];
-        public string[] hiphopLocation = new string[(int)EffectsQuantity.hipHop];
+        public string[] hipHopDrums = new string[4];
+        public string[] hipHopGuitar = new string[4];
+        public string[] hipHopFlutes = new string[4];
+        public string[] hiphopPiano = new string[4];
+        public string[] hiphopVox = new string[4];
+        public string[] hiphopFX = new string[4];
 
-        public string[] hipHopBaseSamplesNames = new string[(int)EffectsQuantity.hipHopBeats];
-        public string[] drumsSamplesNames = new string[(int)EffectsQuantity.drums];
-        public string[] guitarSamplesNames = new string[(int)EffectsQuantity.guitar];
-        public string[] hiphopSamplesNames = new string[(int)EffectsQuantity.hipHop];
+        public string[] reggaeDrums = new string[4];
+        public string[] reggaeGuitar = new string[4];
+        public string[] reggaeFlutes = new string[4];
+        public string[] reggaePiano = new string[4];
+        public string[] reggaeVox = new string[4];
+        public string[] reggaeFX = new string[4];
 
-        public string[] allEffects = new string[40];
+        public string[] drumsSamplesNames = new string[4];
+        public string[] guitarSamplesNames = new string[4];
+        public string[] flutesSamplesNames = new string[4];
+        public string[] pianoSamplesNames = new string[4];
+        public string[] voxSamplesNames = new string[4];
+        public string[] fxSamplesNames = new string[4];
+
+        public string[] allHipHopEffects = new string[48];
+        //public string[] allReggaeEffects = new string[24];
 
         public PathFiles()
-        {            
+        {
             SetPathEffects();
             ConcatEffects();
             GetNames();
@@ -31,33 +43,50 @@ namespace SoundsTest
 
         private void SetPathEffects()
         {
-            for (int i = 0; i < (int)EffectsQuantity.drums; i++)
+            for (int i = 0; i < 4; i++)
             {
-                hipHopBaseLocation[i] = "Effects/BaseHipHop/hipHop (" + i.ToString() + ").wav";
-                drumsLocation[i] = "Effects/Drums/drums (" + i.ToString() + ").wav";
-                guitarLocation[i] = "Effects/Guitar/guitar (" + i.ToString() + ").wav";
-                hiphopLocation[i] = "Effects/HipHop/hipHop (" + i.ToString() + ").wav";
+                hipHopDrums[i] =  "Effects/HipHop/Drums/Drums (" + i.ToString() + ").wav";
+                hipHopGuitar[i] = "Effects/HipHop/Guitar/Guitar (" + i.ToString() + ").wav";
+                hipHopFlutes[i] = "Effects/HipHop/Flutes/Flutes (" + i.ToString() + ").wav";
+                hiphopPiano[i] =  "Effects/HipHop/Piano/Piano (" + i.ToString() + ").wav";
+                hiphopVox[i] =  "Effects/HipHop/Vox/Vox (" + i.ToString() + ").wav";
+                hiphopFX[i] =  "Effects/HipHop/FX/FX (" + i.ToString() + ").wav";
+
+                reggaeDrums[i] = "Effects/Reggae/Drums/Drums (" + i.ToString() + ").wav";
+                reggaeGuitar[i] = "Effects/Reggae/Guitar/Guitar (" + i.ToString() + ").wav";
+                reggaeFlutes[i] = "Effects/Reggae/Flutes/Flutes (" + i.ToString() + ").wav";
+                reggaePiano[i] = "Effects/Reggae/Piano/Piano (" + i.ToString() + ").wav";
+                reggaeVox[i] = "Effects/Reggae/Vox/Vox (" + i.ToString() + ").wav";
+                reggaeFX[i] = "Effects/Reggae/FX/FX (" + i.ToString() + ").wav";
             }
         }
 
         private void ConcatEffects()
         {
-            allEffects = new List<string>()
-                .Concat(hipHopBaseLocation)
-                .Concat(drumsLocation)
-                .Concat(guitarLocation)
-                .Concat(hiphopLocation)
-                .ToArray();
+            allHipHopEffects = new List<string>()
+                .Concat(hipHopDrums)
+                .Concat(hipHopGuitar)
+                .Concat(hipHopFlutes)
+                .Concat(hiphopPiano)
+                .Concat(hiphopVox)
+                .Concat(hiphopFX)
+                .Concat(reggaeDrums)
+                .Concat(reggaeGuitar)
+                .Concat(reggaeFlutes)
+                .Concat(reggaePiano)
+                .Concat(reggaeVox)
+                .Concat(reggaeFX)
+                .ToArray();            
         }
 
         private void GetNames()
         {
-            for (int i = 0; i < (int)EffectsQuantity.hipHopBeats; i++)
+            for (int i = 0; i < 4; i++)
             {
-                hipHopBaseSamplesNames[i] = (Path.GetFileName("Effects/BaseHipHop/hipHop (" + i.ToString() + ").wav")).Substring(0, 2) + i.ToString();
-                drumsSamplesNames[i] = (Path.GetFileName("Effects/Drums/drums (" + i.ToString() + ").wav")).Substring(0, 2) + i.ToString();
-                guitarSamplesNames[i] = (Path.GetFileName("Effects/Guitar/guitar (" + i.ToString() + ").wav")).Substring(0, 2) + i.ToString();
-                hiphopSamplesNames[i] = (Path.GetFileName("Effects/HipHop/hipHop (" + i.ToString() + ").wav")).Substring(0, 2) + i.ToString();
+                drumsSamplesNames[i] = Path.GetFileName("Effects/HipHop/Drums (" + i.ToString() + ").wav").Substring(0, 2) + i.ToString();
+                guitarSamplesNames[i] = Path.GetFileName("Effects/HipHop/Guitar (" + i.ToString() + ").wav").Substring(0, 2) + i.ToString();
+                flutesSamplesNames[i] = Path.GetFileName("Effects/HipHop/Flutes (" + i.ToString() + ").wav").Substring(0, 2) + i.ToString();
+                pianoSamplesNames[i] = Path.GetFileName("Effects/HipHop/Piano (" + i.ToString() + ").wav").Substring(0, 2) + i.ToString();
             }
         }
     }

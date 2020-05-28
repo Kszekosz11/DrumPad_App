@@ -27,7 +27,7 @@
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
                          materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"
                          materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
-                         Background="MistyRose" BorderBrush="Black" Margin="5" Content="{Binding SampleNames[0]}"
+                         Background="MistyRose" BorderBrush="Black" Margin="5 5 5 0" Content="{Binding SampleNames[0]}"
                          Checked="RadioButton_Checked"
                          Tag="{Binding Tags[0]}"/>
 
@@ -35,7 +35,7 @@
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
                          materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"
                          materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
-                         Background="MistyRose" BorderBrush="Black" Content="{Binding SampleNames[1]}"
+                         Background="MistyRose" BorderBrush="Black" Margin="0 5 5 0" Content="{Binding SampleNames[1]}"
                          Checked="RadioButton_Checked" 
                          Tag="{Binding Tags[1]}" Grid.Column="1"/>
 
@@ -43,7 +43,7 @@
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
                          materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"    
                          materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
-                         Background="MistyRose" BorderBrush="Black" Content="{Binding SampleNames[2]}"
+                         Background="MistyRose" BorderBrush="Black" Margin="5 0 5 5" Content="{Binding SampleNames[2]}"
                          Checked="RadioButton_Checked"
                          Tag="{Binding Tags[2]}" Grid.Column="0" Grid.Row="1"/>
 
@@ -51,15 +51,29 @@
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
                          materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"             
                          materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
-                         Background="MistyRose" BorderBrush="Black" Content="{Binding SampleNames[3]}"
+                         Background="MistyRose" BorderBrush="Black" Margin="0 0 5 5" Content="{Binding SampleNames[3]}"
                          Checked="RadioButton_Checked"
                          Tag="{Binding Tags[3]}" Grid.Column="1" Grid.Row="1"/>
 
-            <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Visibility="{Binding ElementName=me, Path=Tag, Converter={StaticResource TagToVisibilityConverter}}">
-            <Slider x:Name="SliderVolume" Width="auto" Height="20" Margin="5" Value="{Binding Volume}" Maximum="100" ValueChanged="Slider_ValueChanged"/>
-            <Slider x:Name="SliderRate" Width="auto" Height="20" Margin="5" Value="{Binding Rate}" Minimum="0.75" Maximum="1.25" ValueChanged="SliderRate_ValueChanged" Thumb.DragStarted="SliderRate_DragStarted" Thumb.DragCompleted="SliderRate_DragCompleted"/>
-            </StackPanel>
-                
+            <Border BorderBrush="LightGray" BorderThickness="0 1 0 0" Grid.Row="2" Grid.ColumnSpan="2" Visibility="{Binding ElementName=me, Path=Tag, Converter={StaticResource TagToVisibilityConverter}}">
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <materialDesign:PackIcon Foreground="Black" Margin="5 5 5 0" Grid.Row="0" Grid.Column="0" Kind="VolumeHigh"/>
+                        <materialDesign:PackIcon Foreground="Black" Margin="5 5 5 0" Grid.Row="1" Grid.Column="0" Kind="Speedometer"/>
+                        <Slider Grid.Row="0" Grid.Column="1" x:Name="SliderVolume" Width="auto" Height="20" Margin="5" Value="{Binding Volume}" Maximum="100" ValueChanged="Slider_ValueChanged"/>
+                        <Slider Grid.Row="1" Grid.Column="1" x:Name="SliderRate" Width="auto" Height="20" Margin="5" Value="{Binding Rate}" Minimum="0.75" Maximum="1.25" ValueChanged="SliderRate_ValueChanged" Thumb.DragStarted="SliderRate_DragStarted" Thumb.DragCompleted="SliderRate_DragCompleted"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
         </Grid>
     </Border>
 </UserControl>

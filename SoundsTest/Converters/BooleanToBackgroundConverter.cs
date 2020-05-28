@@ -12,7 +12,7 @@ namespace SoundsTest.Converters
     class BooleanToBackgroundConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
+        {            
             bool valueType = (bool)value;
 
             if (valueType == true)

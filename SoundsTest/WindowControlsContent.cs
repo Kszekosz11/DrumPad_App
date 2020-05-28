@@ -8,7 +8,8 @@ namespace SoundsTest
 {
     public static class WindowControlsContent
     {
-        public static string[] labelNames = { "Drums", "Guitar", "Flutes", "Piano", "Vox", "FX" };
+        public static string[] labelHipHopNames = { "HiHat", "Perc", "Kick", "Snare", "Vox", "FX" };
+        public static string[] labelReggaeNames = { "Drums", "Guitar", "Synths", "Piano", "Organ", "Keys" };
         public static string[] musicStyles = { "Hip Hop", "Reggae", "Trap", "House", "Disco", "Rock" };
     }
 }

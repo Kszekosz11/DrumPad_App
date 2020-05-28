@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
@@ -36,9 +35,9 @@ namespace SoundsTest
         public MainWindow()
         {
             InitializeComponent();
+
             pathFiles = new PathFiles();
             analyzer = new Analyzer(PbL, PbR, Spectrum, ComboBoxChooseDevice);
-
             viewModel = new WindowViewModel
             {
                 DrumsSamples = new SamplesModel
@@ -83,7 +82,7 @@ namespace SoundsTest
                     Volume = DefaultValues.volume,
                     Rate = DefaultValues.rate
                 },
-                LabelNames = WindowControlsContent.labelNames,
+                LabelNames = WindowControlsContent.labelHipHopNames,
                 MusicStyles = WindowControlsContent.musicStyles
             };
 
@@ -94,6 +93,35 @@ namespace SoundsTest
         {
             analyzer.Enable = true;
             analyzer.DisplayEnable = (bool)ToggleButtonShowVolume.IsChecked;
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            int tag = int.Parse((sender as Control).Tag.ToString());
+
+            switch (tag)
+            {
+                case 0:
+                    viewModel.DrumsSamples.Tags = Tags.drums;
+                    viewModel.GuitarSamples.Tags = Tags.guitar;
+                    viewModel.FlutesSamples.Tags = Tags.flutes;
+                    viewModel.PianoSamples.Tags = Tags.piano;
+                    viewModel.VoxSamples.Tags = Tags.vox;
+                    viewModel.FXSamples.Tags = Tags.fx;
+                    viewModel.LabelNames = WindowControlsContent.labelHipHopNames;
+                    break;
+                case 1:
+                    viewModel.DrumsSamples.Tags = Tags.drums2;
+                    viewModel.GuitarSamples.Tags = Tags.guitar2;
+                    viewModel.FlutesSamples.Tags = Tags.flutes2;
+                    viewModel.PianoSamples.Tags = Tags.piano2;
+                    viewModel.VoxSamples.Tags = Tags.vox2;
+                    viewModel.FXSamples.Tags = Tags.fx2;
+                    viewModel.LabelNames = WindowControlsContent.labelReggaeNames;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

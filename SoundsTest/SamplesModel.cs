@@ -16,9 +16,25 @@ namespace SoundsTest
         private int volume;
         private double rate;
         private Visibility showVolume;
+        private string[] tags;
 
         public string[] SampleNames { get; set; }
-        public string[] Tags { get; set; }
+        public string[] Tags
+        {
+            get
+            {
+                return tags;
+            }
+            set
+            {
+                if (tags == value)
+                {
+                    return;
+                }
+                tags = value;
+                OnPropertyChanged(nameof(Tags));
+            }
+        }
         public int Volume
         {
             get
