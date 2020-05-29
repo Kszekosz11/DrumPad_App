@@ -1,0 +1,132 @@
+﻿<Window x:Class="DrumPad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DrumPad"        
+        xmlns:converters="clr-namespace:DrumPad.Converters"        
+        xmlns:global="clr-namespace:DrumPad"        
+        mc:Ignorable="d"
+        xmlns:samples="clr-namespace:DrumPad"        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"       
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="DrumPad" Height="700" Width="500" MinHeight="700" MinWidth="500">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <converters:BooleanToBackgroundConverter x:Key="BooleanToBackgroundConverter"/>
+        <converters:BooleanToTagConverter x:Key="BooleanToTagConverter"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.RowSpan="3" Grid.Column="0" Width="100" Margin="5 0 5 5" Visibility="{Binding ElementName=ToggleButtonChangeStyle, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}" Margin="0 10 0 5" Text="Music Style" TextAlignment="Center" FontSize="16" Foreground="DarkOrange"/>
+            <RadioButton Tag="0" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[0]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}"/>
+            <RadioButton Tag="1" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[1]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}"/>
+            <RadioButton Tag="2" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[2]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}"/>
+            <RadioButton Tag="3" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[3]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
+            <RadioButton Tag="4" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[4]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
+            <RadioButton Tag="5" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[5]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
+            <RadioButton Tag="6" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[6]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
+            <RadioButton Tag="7" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[7]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
+            <RadioButton Tag="8" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[8]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
+            <RadioButton Tag="9" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[9]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
+            <RadioButton Tag="10" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[10]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
+        </StackPanel>
+
+        <Border Grid.Row="0" Grid.Column="1" BorderBrush="AliceBlue" BorderThickness="1 1 1 1" Margin="0 0 0 1">
+            <StackPanel Orientation="Horizontal">
+                <Border BorderThickness="1" BorderBrush="Black">
+                    <ToggleButton x:Name="ToggleButtonChangeStyle" Margin="5 0" Style="{StaticResource MaterialDesignActionToggleButton}" ToolTip="Choose your music style" IsChecked="True">
+                        <ToggleButton.Content>
+                            <materialDesign:PackIcon Kind="MusicBoxMultiple" />
+                        </ToggleButton.Content>
+
+                        <materialDesign:ToggleButtonAssist.OnContent>
+                            <materialDesign:PackIcon Kind="ArrowRight" Foreground="{Binding ElementName=ToggleButtonChangeStyle, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}"/>
+                        </materialDesign:ToggleButtonAssist.OnContent>
+                    </ToggleButton>
+                </Border>
+
+                <Border BorderThickness="1" BorderBrush="Black">
+                    <ToggleButton x:Name="ToggleButtonShowVolume" Margin="5 0" Style="{StaticResource MaterialDesignActionToggleButton}" ToolTip="Enable/Disable Volume" Click="ToggleButtonShowVolume_Click">
+                        <ToggleButton.Content>
+                            <materialDesign:PackIcon Kind="Cog"/>
+                        </ToggleButton.Content>
+
+                        <materialDesign:ToggleButtonAssist.OnContent>
+                            <materialDesign:PackIcon Kind="CogOff" Foreground="{Binding ElementName=ToggleButtonShowVolume, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}"/>
+                        </materialDesign:ToggleButtonAssist.OnContent>
+                    </ToggleButton>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Black">
+                    <ComboBox x:Name="ComboBoxChooseDevice" Margin="5 0" Width="auto" FontSize="12" SelectedIndex="0"/>
+                </Border>
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Column="0" Grid.Row="0" Content="{Binding LabelNames[0]}" Style="{StaticResource LeftLabels}"/>
+            <Label Grid.Column="3" Grid.Row="0" Content="{Binding LabelNames[1]}" Style="{StaticResource RightLabels}"/>
+            <Label Grid.Column="0" Grid.Row="1" Content="{Binding LabelNames[2]}" Style="{StaticResource LeftLabels}"/>
+            <Label Grid.Column="3" Grid.Row="1" Content="{Binding LabelNames[3]}" Style="{StaticResource RightLabels}"/>
+            <Label Grid.Column="0" Grid.Row="2" Content="{Binding LabelNames[4]}" Style="{StaticResource LeftLabels}"/>
+            <Label Grid.Column="3" Grid.Row="2" Content="{Binding LabelNames[5]}" Style="{StaticResource RightLabels}"/>
+
+            <samples:UserControlSamples Grid.Column="1" Grid.Row="0" Tag="{Binding ElementName=ToggleButtonShowVolume, Path=IsChecked, Converter={StaticResource BooleanToTagConverter}}" DataContext="{Binding FirstSamples}"/>
+            <samples:UserControlSamples Grid.Column="2" Grid.Row="0" Tag="{Binding ElementName=ToggleButtonShowVolume, Path=IsChecked, Converter={StaticResource BooleanToTagConverter}}" DataContext="{Binding SecondSamples}"/>
+            <samples:UserControlSamples Grid.Column="1" Grid.Row="1" Tag="{Binding ElementName=ToggleButtonShowVolume, Path=IsChecked, Converter={StaticResource BooleanToTagConverter}}" DataContext="{Binding ThirdSamples}"/>
+            <samples:UserControlSamples Grid.Column="2" Grid.Row="1" Tag="{Binding ElementName=ToggleButtonShowVolume, Path=IsChecked, Converter={StaticResource BooleanToTagConverter}}" DataContext="{Binding FourSamples}"/>
+            <samples:UserControlSamples Grid.Column="1" Grid.Row="2" Tag="{Binding ElementName=ToggleButtonShowVolume, Path=IsChecked, Converter={StaticResource BooleanToTagConverter}}" DataContext="{Binding FiveSamples}"/>
+            <samples:UserControlSamples Grid.Column="2" Grid.Row="2" Tag="{Binding ElementName=ToggleButtonShowVolume, Path=IsChecked, Converter={StaticResource BooleanToTagConverter}}" DataContext="{Binding SixSamples}"/>
+        </Grid>
+
+        <Border Grid.Row="2" Grid.Column="1" Visibility="{Binding ElementName=ToggleButtonShowVolume, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}" BorderThickness="2 1 2 3" BorderBrush="Black">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Grid.Column="0" Content="L"/>
+                <Label Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Grid.Column="1" Content="Spectrum Vizualizer"/>
+                <Label Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Grid.Column="2" Content="P"/>
+
+                <ProgressBar Orientation="Vertical" x:Name="PbL" Width="80" Height="30" Grid.Column="0" Grid.Row="1"/>
+                <local:Spectrum x:Name="Spectrum" Grid.Column="1" Grid.Row="1" Height="80" HorizontalAlignment="Center"/>
+                <ProgressBar Orientation="Vertical" x:Name="PbR" Width="80" Height="30" Grid.Column="2" Grid.Row="1"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

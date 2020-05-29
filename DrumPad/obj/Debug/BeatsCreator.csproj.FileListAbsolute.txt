@@ -1,0 +1,104 @@
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Bass.Net.dll
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\bass.dll
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\basswasapi.dll
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\FX\FX (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\FX\FX (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\FX\FX (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Piano\Piano (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Piano\Piano (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Piano\Piano (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Vox\Vox (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Vox\Vox (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Vox\Vox (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\SoundsTest.exe.config
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\SoundsTest.exe
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\SoundsTest.pdb
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\AxInterop.WMPLib.dll
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\MaterialDesignColors.dll
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\MaterialDesignColors.pdb
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\BeatsCreator.csprojAssemblyReference.cache
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\SingleSampleUserControl.g.cs
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\MainWindow.g.cs
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\Spectrum.g.cs
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\App.g.cs
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\SoundsTest_Content.g.cs
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\SoundsTest_MarkupCompile.cache
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\SoundsTest_MarkupCompile.lref
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\App.baml
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\SingleSampleUserControl.baml
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\MainWindow.baml
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\Spectrum.baml
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\SoundsTest.g.resources
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\SoundsTest.Properties.Resources.resources
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\BeatsCreator.csproj.GenerateResource.cache
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\BeatsCreator.csproj.CoreCompileInputs.cache
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\BeatsCreator.csproj.CopyComplete
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\SoundsTest.exe
+D:\C#\BeatsCreator\SoundsTest\obj\Debug\SoundsTest.pdb
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Bass\Bass (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Bass\Bass (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Bass\Bass (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Bass\Bass (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\FX\FX (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Piano\Piano (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Synth\Synth (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Synth\Synth (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Synth\Synth (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Synth\Synth (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Vox\Vox (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Drum\Drum (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Drum\Drum (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Drum\Drum (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\HipHop\Drum\Drum (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Bass\Bass (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Bass\Bass (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Bass\Bass (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Bass\Bass (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Drum\Drum (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Drum\Drum (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Drum\Drum (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Drum\Drum (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Guitar\Guitar (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Guitar\Guitar (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Guitar\Guitar (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Guitar\Guitar (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Percussion\Percussion (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Percussion\Percussion (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Percussion\Percussion (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Percussion\Percussion (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Piano\Piano (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Piano\Piano (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Piano\Piano (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Piano\Piano (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Synth\Synth (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Synth\Synth (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Synth\Synth (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\Reggae\Synth\Synth (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Bass\Bass (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Bass\Bass (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Bass\Bass (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Bass\Bass (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Brass\Brass (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Brass\Brass (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Brass\Brass (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Brass\Brass (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Drums\Drums (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Drums\Drums (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Drums\Drums (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Drums\Drums (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\FX\FX (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\FX\FX (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\FX\FX (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\FX\FX (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Guitar\Guitar (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Guitar\Guitar (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Guitar\Guitar (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Guitar\Guitar (4).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Synth\Synth (1).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Synth\Synth (2).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Synth\Synth (3).wav
+D:\C#\BeatsCreator\SoundsTest\bin\Debug\Effects\House\Synth\Synth (4).wav

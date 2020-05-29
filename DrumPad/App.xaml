@@ -1,0 +1,42 @@
+﻿<Application x:Class="DrumPad.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DrumPad"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Grey.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            
+            <Style TargetType="Label" x:Key="LeftLabels">
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderThickness" Value="1 2 1 1"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Top"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="LayoutTransform">
+                    <Setter.Value>
+                        <RotateTransform Angle="270"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style TargetType="Label" x:Key="RightLabels">
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="BorderThickness" Value="1 2 1 1"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="LayoutTransform">
+                    <Setter.Value>
+                        <RotateTransform Angle="90"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>        
+    </Application.Resources>
+</Application>
