@@ -69,8 +69,8 @@
 
                         <materialDesign:PackIcon Foreground="Black" Margin="5 5 5 0" Grid.Row="0" Grid.Column="0" Kind="VolumeHigh"/>
                         <materialDesign:PackIcon Foreground="Black" Margin="5 5 5 0" Grid.Row="1" Grid.Column="0" Kind="Speedometer"/>
-                        <Slider Grid.Row="0" Grid.Column="1" x:Name="SliderVolume" Width="auto" Height="20" Margin="5" Value="{Binding Volume}" Maximum="100" ValueChanged="Slider_ValueChanged"/>
-                        <Slider Grid.Row="1" Grid.Column="1" x:Name="SliderRate" Width="auto" Height="20" Margin="5" Value="{Binding Rate}" Minimum="0.75" Maximum="1.25" ValueChanged="SliderRate_ValueChanged" Thumb.DragStarted="SliderRate_DragStarted" Thumb.DragCompleted="SliderRate_DragCompleted"/>
+                        <Slider Grid.Row="0" Grid.Column="1" x:Name="SliderVolume" Width="auto" Height="20" Margin="5 5 10 5" Value="{Binding Volume}" Maximum="100" ValueChanged="Slider_ValueChanged"/>
+                        <Slider Grid.Row="1" Grid.Column="1" x:Name="SliderRate" Width="auto" Height="20" Margin="5 5 10 5" Value="{Binding Rate}" Minimum="0.75" Maximum="1.25" ValueChanged="SliderRate_ValueChanged" Thumb.DragStarted="SliderRate_DragStarted" Thumb.DragCompleted="SliderRate_DragCompleted"/>
                     </Grid>
                 </StackPanel>
             </Border>
