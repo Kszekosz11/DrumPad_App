@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MaterialDesignOverrideLibrary">
+    <Style x:Key="MaterialDesignOutlinedButton" BasedOn="{StaticResource MaterialDesignOutlinedButton}" TargetType="{x:Type ToggleButton}">
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Foreground" Value="DarkOrange"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="IndianRed"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

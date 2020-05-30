@@ -19,7 +19,6 @@
         Title="DrumPad" Height="700" Width="500" MinHeight="700" MinWidth="500">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-        <converters:BooleanToBackgroundConverter x:Key="BooleanToBackgroundConverter"/>
         <converters:BooleanToTagConverter x:Key="BooleanToTagConverter"/>
     </Window.Resources>
     <Grid>
@@ -35,17 +34,18 @@
 
         <StackPanel Grid.RowSpan="3" Grid.Column="0" Width="100" Margin="5 0 5 5" Visibility="{Binding ElementName=ToggleButtonChangeStyle, Path=IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}">
             <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}" Margin="0 10 0 5" Text="Music Style" TextAlignment="Center" FontSize="16" Foreground="DarkOrange"/>
-            <RadioButton Tag="0" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[0]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}"/>
-            <RadioButton Tag="1" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[1]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}"/>
-            <RadioButton Tag="2" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[2]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}"/>
-            <RadioButton Tag="3" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[3]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
-            <RadioButton Tag="4" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[4]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
-            <RadioButton Tag="5" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[5]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
-            <RadioButton Tag="6" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[6]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
-            <RadioButton Tag="7" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[7]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
-            <RadioButton Tag="8" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[8]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
-            <RadioButton Tag="9" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[9]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
-            <RadioButton Tag="10" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[10]}" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}" IsEnabled="False"/>
+            
+            <RadioButton Tag="0" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[0]}"/>
+            <RadioButton Tag="1" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[1]}"/>
+            <RadioButton Tag="2" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[2]}"/>
+            <RadioButton Tag="3" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[3]}" IsEnabled="False"/>
+            <RadioButton Tag="4" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[4]}" IsEnabled="False"/>
+            <RadioButton Tag="5" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[5]}" IsEnabled="False"/>
+            <RadioButton Tag="6" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[6]}" IsEnabled="False"/>
+            <RadioButton Tag="7" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[7]}" IsEnabled="False"/>
+            <RadioButton Tag="8" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[8]}" IsEnabled="False"/>
+            <RadioButton Tag="9" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[9]}" IsEnabled="False"/>
+            <RadioButton Tag="10" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[10]}" IsEnabled="False"/>
         </StackPanel>
 
         <Border Grid.Row="0" Grid.Column="1" BorderBrush="AliceBlue" BorderThickness="1 1 1 1" Margin="0 0 0 1">
@@ -57,7 +57,7 @@
                         </ToggleButton.Content>
 
                         <materialDesign:ToggleButtonAssist.OnContent>
-                            <materialDesign:PackIcon Kind="ArrowRight" Foreground="{Binding ElementName=ToggleButtonChangeStyle, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}"/>
+                            <materialDesign:PackIcon Kind="ArrowRight"/>
                         </materialDesign:ToggleButtonAssist.OnContent>
                     </ToggleButton>
                 </Border>
@@ -69,7 +69,7 @@
                         </ToggleButton.Content>
 
                         <materialDesign:ToggleButtonAssist.OnContent>
-                            <materialDesign:PackIcon Kind="CogOff" Foreground="{Binding ElementName=ToggleButtonShowVolume, Path=IsChecked, Converter={StaticResource BooleanToBackgroundConverter}}"/>
+                            <materialDesign:PackIcon Kind="CogOff"/>
                         </materialDesign:ToggleButtonAssist.OnContent>
                     </ToggleButton>
                 </Border>
