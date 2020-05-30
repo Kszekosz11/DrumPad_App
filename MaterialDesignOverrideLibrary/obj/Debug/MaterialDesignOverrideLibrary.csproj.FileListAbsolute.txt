@@ -9,3 +9,4 @@ D:\C#\DrumPad\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibr
 D:\C#\DrumPad\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.csproj.CoreCompileInputs.cache
 D:\C#\DrumPad\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.dll
 D:\C#\DrumPad\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.pdb
+D:\C#\DrumPad\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.csprojAssemblyReference.cache
