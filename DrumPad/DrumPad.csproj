@@ -377,9 +377,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\MaterialDesignOverrideLibrary\MaterialDesignOverrideLibrary.csproj">
       <Project>{dd4bae7b-bd8b-4118-a9bb-6a0bd53ea170}</Project>
       <Name>MaterialDesignOverrideLibrary</Name>

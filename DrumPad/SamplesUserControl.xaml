@@ -23,13 +23,14 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
+            <RadioButton x:Name="marian" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
                          materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"
                          materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
                          Background="MistyRose" BorderBrush="Black" Margin="5 5 5 0" Content="{Binding SampleNames[0]}"
-                         Checked="RadioButton_Checked"
+                         Checked="RadioButton_Checked"                         
                          Tag="{Binding Tags[0]}"/>
+            <!--IsChecked="{Binding ElementName=me, Path=SamplesChecked}"-->
 
             <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
@@ -38,6 +39,7 @@
                          Background="MistyRose" BorderBrush="Black" Margin="0 5 5 0" Content="{Binding SampleNames[1]}"
                          Checked="RadioButton_Checked" 
                          Tag="{Binding Tags[1]}" Grid.Column="1"/>
+            <!--IsChecked="{Binding ElementName=me, Path=SamplesChecked}"/>-->
 
             <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
@@ -46,6 +48,7 @@
                          Background="MistyRose" BorderBrush="Black" Margin="5 0 5 5" Content="{Binding SampleNames[2]}"
                          Checked="RadioButton_Checked"
                          Tag="{Binding Tags[2]}" Grid.Column="0" Grid.Row="1"/>
+            <!--IsChecked="{Binding ElementName=me, Path=SamplesChecked}"/>-->
 
             <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
@@ -54,6 +57,7 @@
                          Background="MistyRose" BorderBrush="Black" Margin="0 0 5 5" Content="{Binding SampleNames[3]}"
                          Checked="RadioButton_Checked"
                          Tag="{Binding Tags[3]}" Grid.Column="1" Grid.Row="1"/>
+            <!--IsChecked="{Binding ElementName=me, Path=SamplesChecked}"/>-->
 
             <Border BorderBrush="LightGray" BorderThickness="0 1 0 0" Grid.Row="2" Grid.ColumnSpan="2" Visibility="{Binding ElementName=me, Path=Tag, Converter={StaticResource TagToVisibilityConverter}}">
                 <StackPanel>

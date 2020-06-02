@@ -28,14 +28,24 @@ namespace DrumPad
         PathFiles pathFiles;
         private int SampleTag;
 
+        public bool SamplesChecked
+        {
+            get { return (bool)GetValue(SamplesCheckedProperty); }
+            set { SetValue(SamplesCheckedProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for SamplesChecked.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty SamplesCheckedProperty =
+            DependencyProperty.Register("SamplesChecked", typeof(bool), typeof(UserControlSamples));
+
         public UserControlSamples()
         {
             InitializeComponent();
-            pathFiles = new PathFiles();
+            pathFiles = new PathFiles();            
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {            
+        {
             SampleTag = int.Parse((sender as Control).Tag.ToString());
             samplePlayer.URL = pathFiles.allEffects[SampleTag];
             samplePlayer.settings.setMode("loop", true);
@@ -62,6 +72,11 @@ namespace DrumPad
         private void SliderRate_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
         {
             samplePlayer.controls.play();
+        }
+
+        private void RadioButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            samplePlayer.controls.stop();
         }
     }
 }

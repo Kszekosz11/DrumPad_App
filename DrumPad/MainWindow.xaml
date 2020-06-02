@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DrumPad"        
+        xmlns:local="clr-namespace:DrumPad"                        
         xmlns:converters="clr-namespace:DrumPad.Converters"        
         xmlns:global="clr-namespace:DrumPad"        
         mc:Ignorable="d"
@@ -16,17 +16,19 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="DrumPad" Height="680" Width="500" MinHeight="700" MinWidth="500">
+        Title="DrumPad" Height="680" Width="500" MinHeight="700" MinWidth="500" x:Name="me">
     <Window.Triggers>
         <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="ToggleButtonChangeStyle">
             <BeginStoryboard>
                 <Storyboard>
-                    <DoubleAnimation Storyboard.TargetName="StackPanelMenu" Storyboard.TargetProperty="Width" Duration="0:0:1.5" From="0" To="100">
+                    <DoubleAnimation Storyboard.TargetName="StackPanelMenu" Storyboard.TargetProperty="Width" Duration="0:0:1.5" To="100">
                         <DoubleAnimation.EasingFunction>
                             <ElasticEase EasingMode="EaseOut"/>
                         </DoubleAnimation.EasingFunction>
                     </DoubleAnimation>
-                    <DoubleAnimation Storyboard.TargetName="StackPanelMenu" Storyboard.TargetProperty="Opacity" Duration="0:0:1.5" From="0.0" To="1.0"/>
+                    <DoubleAnimation Storyboard.TargetName="StackPanelMenu" Storyboard.TargetProperty="Opacity" Duration="0:0:1.5" To="1.0"/>
+                    <ThicknessAnimation Storyboard.TargetName="StackPanelMenu" Storyboard.TargetProperty="Margin" Duration="0:0:0.5" To="5 0 5 5"/>
+                    <DoubleAnimation Storyboard.TargetName="me" Storyboard.TargetProperty="Width" Duration="0:0:1.5" To="600"/>
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
@@ -34,11 +36,13 @@
         <EventTrigger RoutedEvent="ToggleButton.Unchecked" SourceName="ToggleButtonChangeStyle">
             <BeginStoryboard>
                 <Storyboard>
-                    <DoubleAnimation Storyboard.TargetName="StackPanelMenu" Storyboard.TargetProperty="Width" Duration="0:0:1" From="100" To="0">
+                    <DoubleAnimation Storyboard.TargetName="StackPanelMenu" Storyboard.TargetProperty="Width" Duration="0:0:1" To="0">
                         <DoubleAnimation.EasingFunction>
                             <CircleEase EasingMode="EaseIn"/>
                         </DoubleAnimation.EasingFunction>
                     </DoubleAnimation>
+                    <ThicknessAnimation Storyboard.TargetName="StackPanelMenu" Storyboard.TargetProperty="Margin" Duration="0:0:0.5" To="0"/>
+                    <DoubleAnimation Storyboard.TargetName="me" Storyboard.TargetProperty="Width" Duration="0:0:1" To="{Binding ElementName=me, Path=MinWidth}"/>
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
@@ -60,19 +64,19 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel x:Name="StackPanelMenu" Grid.RowSpan="3" Grid.Column="0" Width="0" Margin="5 0 5 5">
+        <StackPanel x:Name="StackPanelMenu" Grid.RowSpan="3" Grid.Column="0" Width="0" Margin="0">
             <TextBlock Style="{StaticResource MaterialDesignHeadline6TextBlock}" Margin="0 10 0 5" Text="Music Style" TextAlignment="Center" FontSize="16" Foreground="DarkOrange"/>
-            <RadioButton Tag="0" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[0]}"/>
-            <RadioButton Tag="1" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[1]}"/>
-            <RadioButton Tag="2" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[2]}"/>
-            <RadioButton Tag="3" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[3]}" IsEnabled="False"/>
-            <RadioButton Tag="4" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[4]}" IsEnabled="False"/>
-            <RadioButton Tag="5" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[5]}" IsEnabled="False"/>
-            <RadioButton Tag="6" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[6]}" IsEnabled="False"/>
-            <RadioButton Tag="7" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[7]}" IsEnabled="False"/>
-            <RadioButton Tag="8" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[8]}" IsEnabled="False"/>
-            <RadioButton Tag="9" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[9]}" IsEnabled="False"/>
-            <RadioButton Tag="10" Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Content="{Binding MusicStyles[10]}" IsEnabled="False"/>
+            <RadioButton Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Tag="0" Content="{Binding MusicStyles[0]}"/>
+            <RadioButton Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Tag="1" Content="{Binding MusicStyles[1]}"/>
+            <RadioButton Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Tag="2" Content="{Binding MusicStyles[2]}"/>
+            <RadioButton Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Tag="3" Content="{Binding MusicStyles[3]}" IsEnabled="False"/>
+            <RadioButton Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Tag="4" Content="{Binding MusicStyles[4]}" IsEnabled="False"/>
+            <RadioButton Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Tag="5" Content="{Binding MusicStyles[5]}" IsEnabled="False"/>
+            <RadioButton Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Tag="6" Content="{Binding MusicStyles[6]}" IsEnabled="False"/>
+            <RadioButton Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Tag="7" Content="{Binding MusicStyles[7]}" IsEnabled="False"/>
+            <RadioButton Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Tag="8" Content="{Binding MusicStyles[8]}" IsEnabled="False"/>
+            <RadioButton Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Tag="9" Content="{Binding MusicStyles[9]}" IsEnabled="False"/>
+            <RadioButton Checked="RadioButton_Checked" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="0 5 0 0" Tag="10" Content="{Binding MusicStyles[10]}" IsEnabled="False"/>
         </StackPanel>
 
         <Border Grid.Row="0" Grid.Column="1" BorderBrush="AliceBlue" BorderThickness="1 1 1 1" Margin="0 0 0 1">
@@ -100,6 +104,19 @@
                         </materialDesign:ToggleButtonAssist.OnContent>
                     </ToggleButton>
                 </Border>
+
+                <!--<Button Name="myButton" Content="Reset">
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click" SourceName="myButton">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <BooleanAnimationUsingKeyFrames Storyboard.TargetName="samples1" Storyboard.TargetProperty="SamplesChecked"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
+                </Button>-->
+
                 <Border BorderThickness="1" BorderBrush="Black">
                     <ComboBox x:Name="ComboBoxChooseDevice" Margin="5 0" Width="auto" FontSize="12" SelectedIndex="0"/>
                 </Border>
@@ -143,7 +160,7 @@
                     <ColumnDefinition Width="50"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="35"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
@@ -152,7 +169,7 @@
                 <Label Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Grid.Column="2" Content="P"/>
 
                 <ProgressBar Orientation="Vertical" x:Name="PbL" Width="80" Height="30" Grid.Column="0" Grid.Row="1"/>
-                <local:Spectrum x:Name="Spectrum" Grid.Column="1" Grid.Row="1" Height="80" Width="auto" HorizontalAlignment="Center"/>
+                <local:Spectrum x:Name="Spectrum" Grid.Column="1" Grid.Row="1" Height="80" HorizontalAlignment="Center"/>
                 <ProgressBar Orientation="Vertical" x:Name="PbR" Width="80" Height="30" Grid.Column="2" Grid.Row="1"/>
             </Grid>
         </Border>

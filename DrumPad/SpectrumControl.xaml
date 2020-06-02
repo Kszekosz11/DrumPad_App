@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:DrumPad"
              xmlns:converters="clr-namespace:DrumPad.Converters"
              mc:Ignorable="d"
-             d:DesignHeight="200" d:DesignWidth="330">
+             d:DesignHeight="200" d:DesignWidth="344">
     <UserControl.Resources>
         <converters:SpectrumValueToBackgroudConverter x:Key="SpectrumValueToBackgroudConverter"/>
         <Style TargetType="ProgressBar">
@@ -21,7 +21,7 @@
         <StackPanel.LayoutTransform>
             <RotateTransform Angle="-90"/>
         </StackPanel.LayoutTransform>
-        <ProgressBar x:Name="Bar01" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=Value, Converter={StaticResource SpectrumValueToBackgroudConverter}}"/>
+        <ProgressBar x:Name="Bar01" Margin="0 0 0 1" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=Value, Converter={StaticResource SpectrumValueToBackgroudConverter}}"/>
         <ProgressBar x:Name="Bar02" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=Value, Converter={StaticResource SpectrumValueToBackgroudConverter}}"/>
         <ProgressBar x:Name="Bar03" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=Value, Converter={StaticResource SpectrumValueToBackgroudConverter}}"/>
         <ProgressBar x:Name="Bar04" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=Value, Converter={StaticResource SpectrumValueToBackgroudConverter}}"/>
@@ -36,6 +36,6 @@
         <ProgressBar x:Name="Bar13" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=Value, Converter={StaticResource SpectrumValueToBackgroudConverter}}"/>
         <ProgressBar x:Name="Bar14" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=Value, Converter={StaticResource SpectrumValueToBackgroudConverter}}"/>
         <ProgressBar x:Name="Bar15" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=Value, Converter={StaticResource SpectrumValueToBackgroudConverter}}"/>
-        <ProgressBar x:Name="Bar16" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=Value, Converter={StaticResource SpectrumValueToBackgroudConverter}}"/>
+        <ProgressBar x:Name="Bar16" Margin="0 1 0 0" Foreground="{Binding RelativeSource={RelativeSource Self}, Path=Value, Converter={StaticResource SpectrumValueToBackgroudConverter}}"/>
     </StackPanel>
 </UserControl>
