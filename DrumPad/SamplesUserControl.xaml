@@ -11,6 +11,22 @@
     <UserControl.Resources>
         <converters:TagToVisibilityConverter x:Key="TagToVisibilityConverter"/>
     </UserControl.Resources>
+
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Button.Click" SourceName="ButtonStop">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard>
+                        <BooleanAnimationUsingKeyFrames Storyboard.TargetName="RadioButtonFirstSample" Storyboard.TargetProperty="IsChecked"/>
+                        <BooleanAnimationUsingKeyFrames Storyboard.TargetName="RadioButtonSecondSample" Storyboard.TargetProperty="IsChecked"/>
+                        <BooleanAnimationUsingKeyFrames Storyboard.TargetName="RadioButtonThirdSample" Storyboard.TargetProperty="IsChecked"/>
+                        <BooleanAnimationUsingKeyFrames Storyboard.TargetName="RadioButtonFourthSample" Storyboard.TargetProperty="IsChecked"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </UserControl.Triggers>
+
     <Border BorderThickness="1" BorderBrush="Black">
         <Grid Background="Bisque">
             <Grid.ColumnDefinitions>
@@ -23,41 +39,41 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <RadioButton x:Name="marian" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
+            <RadioButton x:Name="RadioButtonFirstSample" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
                          materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"
                          materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
                          Background="MistyRose" BorderBrush="Black" Margin="5 5 5 0" Content="{Binding SampleNames[0]}"
                          Checked="RadioButton_Checked"                         
+                         Unchecked="RadioButton_Unchecked"
                          Tag="{Binding Tags[0]}"/>
-            <!--IsChecked="{Binding ElementName=me, Path=SamplesChecked}"-->
 
-            <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+            <RadioButton x:Name="RadioButtonSecondSample" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
                          materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"
                          materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
                          Background="MistyRose" BorderBrush="Black" Margin="0 5 5 0" Content="{Binding SampleNames[1]}"
                          Checked="RadioButton_Checked" 
+                         Unchecked="RadioButton_Unchecked"
                          Tag="{Binding Tags[1]}" Grid.Column="1"/>
-            <!--IsChecked="{Binding ElementName=me, Path=SamplesChecked}"/>-->
 
-            <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+            <RadioButton x:Name="RadioButtonThirdSample" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
                          materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"    
                          materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
                          Background="MistyRose" BorderBrush="Black" Margin="5 0 5 5" Content="{Binding SampleNames[2]}"
                          Checked="RadioButton_Checked"
+                         Unchecked="RadioButton_Unchecked"
                          Tag="{Binding Tags[2]}" Grid.Column="0" Grid.Row="1"/>
-            <!--IsChecked="{Binding ElementName=me, Path=SamplesChecked}"/>-->
 
-            <RadioButton Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+            <RadioButton x:Name="RadioButtonFourthSample" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                          materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"                           
                          materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}"             
                          materialDesign:ButtonProgressAssist.IndicatorForeground="DarkOrange"
                          Background="MistyRose" BorderBrush="Black" Margin="0 0 5 5" Content="{Binding SampleNames[3]}"
                          Checked="RadioButton_Checked"
+                         Unchecked="RadioButton_Unchecked"
                          Tag="{Binding Tags[3]}" Grid.Column="1" Grid.Row="1"/>
-            <!--IsChecked="{Binding ElementName=me, Path=SamplesChecked}"/>-->
 
             <Border BorderBrush="LightGray" BorderThickness="0 1 0 0" Grid.Row="2" Grid.ColumnSpan="2" Visibility="{Binding ElementName=me, Path=Tag, Converter={StaticResource TagToVisibilityConverter}}">
                 <StackPanel>
@@ -76,6 +92,12 @@
                         <Slider Grid.Row="0" Grid.Column="1" x:Name="SliderVolume" Width="auto" Height="20" Margin="5 5 10 5" Value="{Binding Volume}" Maximum="100" ValueChanged="Slider_ValueChanged"/>
                         <Slider Grid.Row="1" Grid.Column="1" x:Name="SliderRate" Width="auto" Height="20" Margin="5 5 10 5" Value="{Binding Rate}" Minimum="0.75" Maximum="1.25" ValueChanged="SliderRate_ValueChanged" Thumb.DragStarted="SliderRate_DragStarted" Thumb.DragCompleted="SliderRate_DragCompleted"/>
                     </Grid>
+                    <Button x:Name="ButtonStop" Style="{StaticResource MaterialDesignRaisedButton}"
+                            Content="Stop">                        
+                            <!--materialDesign:ButtonProgressAssist.Value="-1"
+                            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                            materialDesign:ButtonProgressAssist.IsIndeterminate="True"-->
+                    </Button>
                 </StackPanel>
             </Border>
         </Grid>

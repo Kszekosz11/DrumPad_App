@@ -48,8 +48,8 @@ namespace DrumPad
                 OnPropertyChanged(nameof(Tags));
             }
         }
-        
-        private int volume;
+
+        private int volume = 50;
         public int Volume
         {
             get
@@ -66,8 +66,8 @@ namespace DrumPad
                 OnPropertyChanged(nameof(Volume));
             }
         }
-        
-        private double rate;
+
+        private double rate = 1.0;
         public double Rate
         {
             get
@@ -84,7 +84,7 @@ namespace DrumPad
                 OnPropertyChanged(nameof(Rate));
             }
         }
-        
+
         private Visibility showVolume;
         public Visibility ShowVolume
         {

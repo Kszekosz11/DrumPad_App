@@ -46,12 +46,15 @@ namespace DrumPad
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            SampleTag = int.Parse((sender as Control).Tag.ToString());
-            samplePlayer.URL = pathFiles.allEffects[SampleTag];
-            samplePlayer.settings.setMode("loop", true);
-            samplePlayer.settings.volume = (int)SliderVolume.Value;
-            samplePlayer.settings.rate = SliderRate.Value;
-            samplePlayer.controls.play();
+            if ((sender as Control).Tag != null)
+            {
+                SampleTag = int.Parse((sender as Control).Tag.ToString());
+                samplePlayer.URL = pathFiles.allEffects[SampleTag];
+                samplePlayer.settings.setMode("loop", true);
+                samplePlayer.settings.volume = (int)SliderVolume.Value;
+                samplePlayer.settings.rate = SliderRate.Value;
+                samplePlayer.controls.play();
+            }
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

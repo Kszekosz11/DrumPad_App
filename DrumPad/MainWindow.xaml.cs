@@ -28,7 +28,6 @@ namespace DrumPad
     /// </summary>
     public partial class MainWindow : Window
     {
-        PathFiles pathFiles;
         public WindowViewModel viewModel = new WindowViewModel();
         SetTags setTags;
         SetSampleNames setSampleNames;
@@ -38,49 +37,18 @@ namespace DrumPad
         {
             InitializeComponent();
 
-            pathFiles = new PathFiles();
             setTags = new SetTags();
             setSampleNames = new SetSampleNames();
             analyzer = new Analyzer(PbL, PbR, Spectrum, ComboBoxChooseDevice);
 
             viewModel = new WindowViewModel
             {
-                FirstSamples = new SamplesModel
-                {
-                    Tags = Tags.hipHopDrum,
-                    Volume = DefaultValues.volume,
-                    Rate = DefaultValues.rate
-                },
-                SecondSamples = new SamplesModel
-                {
-                    Tags = Tags.hipHopBass,
-                    Volume = DefaultValues.volume,
-                    Rate = DefaultValues.rate
-                },
-                ThirdSamples = new SamplesModel
-                {                 
-                    Tags = Tags.hipHopSynth,
-                    Volume = DefaultValues.volume,
-                    Rate = DefaultValues.rate
-                },
-                FourSamples = new SamplesModel
-                {                 
-                    Tags = Tags.hipHopPiano,
-                    Volume = DefaultValues.volume,
-                    Rate = DefaultValues.rate
-                },
-                FiveSamples = new SamplesModel
-                {                 
-                    Tags = Tags.hipHopVox,
-                    Volume = DefaultValues.volume,
-                    Rate = DefaultValues.rate
-                },
-                SixSamples = new SamplesModel
-                {                 
-                    Tags = Tags.hipHopFx,
-                    Volume = DefaultValues.volume,
-                    Rate = DefaultValues.rate
-                },
+                FirstSamples = new SamplesModel(),
+                SecondSamples = new SamplesModel(),
+                ThirdSamples = new SamplesModel(),
+                FourSamples = new SamplesModel(),
+                FiveSamples = new SamplesModel(),
+                SixSamples = new SamplesModel(),
                 MusicStyles = WindowControlsContent.musicStyles
             };
 

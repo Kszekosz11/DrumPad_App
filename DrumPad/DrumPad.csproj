@@ -82,7 +82,6 @@
     <Compile Include="Converters\BooleanToTagConverter.cs" />
     <Compile Include="Converters\SpectrumValueToBackgroudConverter.cs" />
     <Compile Include="Converters\TagToVisibilityConverter.cs" />
-    <Compile Include="DefaultValues.cs" />
     <Compile Include="Names.cs" />
     <Compile Include="SamplesModel.cs" />
     <Compile Include="SetSampleNames.cs" />
