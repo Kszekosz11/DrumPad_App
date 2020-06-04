@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E19F3662-92A6-4EE6-9812-AC8FD93629C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SoundsTest</RootNamespace>
-    <AssemblyName>SoundsTest</AssemblyName>
+    <RootNamespace>DrumPad</RootNamespace>
+    <AssemblyName>DrumPad</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -91,10 +91,6 @@
     </Compile>
     <Compile Include="ContentControls.cs" />
     <Compile Include="WindowViewModel.cs" />
-    <Page Include="Dictionary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="SamplesUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
