@@ -1,4 +1,4 @@
-# DrumPad
+# Drumpad
 ## C# Application to play music samples
 
 * Wpf
