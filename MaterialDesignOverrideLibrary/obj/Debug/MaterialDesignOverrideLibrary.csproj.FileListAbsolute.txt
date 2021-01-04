@@ -10,3 +10,15 @@ D:\C#\DrumPad\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibr
 D:\C#\DrumPad\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.dll
 D:\C#\DrumPad\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.pdb
 D:\C#\DrumPad\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.csprojAssemblyReference.cache
+D:\DrumPad_App\MaterialDesignOverrideLibrary\bin\Debug\MaterialDesignOverrideLibrary.dll
+D:\DrumPad_App\MaterialDesignOverrideLibrary\bin\Debug\MaterialDesignOverrideLibrary.pdb
+D:\DrumPad_App\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.csprojAssemblyReference.cache
+D:\DrumPad_App\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary_MarkupCompile.cache
+D:\DrumPad_App\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary_MarkupCompile.lref
+D:\DrumPad_App\MaterialDesignOverrideLibrary\obj\Debug\ToggleButtonDictionary.baml
+D:\DrumPad_App\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.g.resources
+D:\DrumPad_App\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.Properties.Resources.resources
+D:\DrumPad_App\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.csproj.GenerateResource.cache
+D:\DrumPad_App\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.csproj.CoreCompileInputs.cache
+D:\DrumPad_App\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.dll
+D:\DrumPad_App\MaterialDesignOverrideLibrary\obj\Debug\MaterialDesignOverrideLibrary.pdb
