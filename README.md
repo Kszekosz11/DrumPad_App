@@ -1,4 +1,4 @@
-# DrumPad
+# DrumPad, C# Application to play music samples
 
 * Wpf
-* MaterialDesign [Link](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit)
+* Material Design In XAML Toolkit [Source](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit)
